@@ -13,6 +13,23 @@ class RecommendationEngine:
         with open(data_path / "destinations.json", "r", encoding="utf-8") as f:
             self.destinations = json.load(f)
 
+    def get_top_attractions(
+    self,
+    destination,
+    travel_style="nature",
+    pace="balanced",
+    limit=6
+    ):
+            
+        results = self.recommend(
+        destination=destination,
+        travel_style=travel_style,
+        pace=pace
+        )
+
+        return results[:limit]
+
+
     def get_destination_attractions(self, destination_id):
         return [
             attraction
@@ -145,6 +162,15 @@ if __name__ == "__main__":
         }
     ]
 
+    top_attractions = engine.get_top_attractions(
+            destination="kerala"
+        )
+
+    print("\nTOP ATTRACTIONS TEST\n")
+
+    for attraction in top_attractions:
+            print(attraction)
+            
     for test in tests:
 
         print("\n" + "=" * 50)
@@ -160,6 +186,6 @@ if __name__ == "__main__":
             travel_style=test["travel_style"],
             pace=test["pace"]
         )
-
+            
         for item in results:
             print(item)
