@@ -1,0 +1,688 @@
+[
+  {
+    "id": "dawki",
+    "name": "Dawki River",
+    "destinationId": "meghalaya",
+    "location": { "lat": 25.1500, "lng": 92.0167 },
+    "categories": ["nature", "photography"],
+    "experienceTypes": ["river", "boating", "photography"],
+    "heroScore": 98,
+    "uniquenessScore": 95,
+    "popularityScore": 92,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed", "balanced"],
+    "averageVisitDurationHours": 3,
+    "isHeroExperience": true,
+    "primaryCategory": "river",
+    "imageSearchTerms": [
+      "Umngot River Dawki Meghalaya",
+      "Dawki crystal clear river",
+      "Dawki boating Meghalaya"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 99,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning",
+      "day"
+    ],
+
+    "weatherSensitivity": "high",
+
+    "recommendationReasons": [
+      "Crystal clear river experience",
+      "One of the most photogenic locations in Meghalaya",
+      "Suitable for relaxed trips and couples"
+    ]
+  },
+  {
+    "id": "living_root_bridge",
+    "name": "Living Root Bridge",
+    "destinationId": "meghalaya",
+    "location": { "lat": 25.2440, "lng": 91.7320 },
+    "categories": ["nature", "adventure"],
+    "experienceTypes": ["trek", "photography"],
+    "heroScore": 99,
+    "uniquenessScore": 100,
+    "popularityScore": 95,
+    "energyLevel": "high",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 5,
+    "isHeroExperience": true,
+    "primaryCategory": "forest",
+    "imageSearchTerms": [
+      "Double Decker Living Root Bridge Meghalaya",
+      "Living Root Bridge Cherrapunji",
+      "Root Bridge Meghalaya Trek"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 98,
+    "crowdLevel": "medium",
+
+    "familyFriendly": false,
+    "coupleFriendly": true,
+    "seniorFriendly": false,
+
+    "idealVisitTime": [
+      "morning"
+    ],
+
+    "weatherSensitivity": "high",
+
+    "recommendationReasons": [
+      "Unique living root architecture found nowhere else",
+      "One of Meghalaya's signature hero experiences",
+      "Excellent trekking and photography opportunity"
+    ]
+  },
+  {
+    "id": "laitlum_canyon",
+    "name": "Laitlum Canyon",
+    "destinationId": "meghalaya",
+    "location": { "lat": 25.5730, "lng": 91.9230 },
+    "categories": ["nature", "photography"],
+    "experienceTypes": ["viewpoint", "sunset", "photography"],
+    "heroScore": 95,
+    "uniquenessScore": 90,
+    "popularityScore": 85,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed", "balanced"],
+    "averageVisitDurationHours": 2,
+    "isHeroExperience": true,
+    "primaryCategory": "canyon",
+    "imageSearchTerms": [
+      "Laitlum Canyon Meghalaya",
+      "Laitlum Grand Canyon Meghalaya",
+      "Laitlum viewpoint clouds"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 97,
+    "crowdLevel": "low",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunrise",
+      "sunset"
+    ],
+
+    "weatherSensitivity": "medium",
+
+    "recommendationReasons": [
+      "Spectacular panoramic canyon views",
+      "Ideal for photography and sunset watching",
+      "Peaceful and uncrowded experience"
+    ]
+  },
+  {
+    "id": "umiam_lake",
+    "name": "Umiam Lake",
+    "destinationId": "meghalaya",
+    "location": { "lat": 25.6640, "lng": 91.8970 },
+    "categories": ["nature"],
+    "experienceTypes": ["lake", "boating", "sunset"],
+    "heroScore": 88,
+    "uniquenessScore": 80,
+    "popularityScore": 84,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed"],
+    "averageVisitDurationHours": 2,
+    "isHeroExperience": false,
+    "primaryCategory": "lake",
+    "imageSearchTerms": [
+      "Umiam Lake Shillong",
+      "Barapani Lake Meghalaya",
+      "Umiam Lake sunset"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 88,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning",
+      "sunset"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Beautiful lakeside relaxation stop",
+      "Suitable for boating and family outings",
+      "Convenient stop near Shillong"
+    ]
+  },
+  {
+    "id": "mawlynnong",
+    "name": "Mawlynnong Village",
+    "destinationId": "meghalaya",
+    "location": { "lat": 25.2030, "lng": 91.9130 },
+    "categories": ["culture", "nature"],
+    "experienceTypes": ["village_life", "photography"],
+    "heroScore": 85,
+    "uniquenessScore": 82,
+    "popularityScore": 80,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed"],
+    "averageVisitDurationHours": 2,
+    "isHeroExperience": false,
+    "primaryCategory": "village",
+    "imageSearchTerms": [
+      "Mawlynnong cleanest village Asia",
+      "Mawlynnong Meghalaya village",
+      "Mawlynnong skywalk"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 84,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning",
+      "day"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Known as one of Asia's cleanest villages",
+      "Authentic local village experience",
+      "Excellent cultural immersion opportunity"
+    ]
+  },
+
+  {
+    "id": "munnar",
+    "name": "Munnar",
+    "destinationId": "kerala",
+    "location": { "lat": 10.0889, "lng": 77.0595 },
+    "categories": ["nature", "photography"],
+    "experienceTypes": ["viewpoint", "scenic_drive", "sunrise"],
+    "heroScore": 96,
+    "uniquenessScore": 90,
+    "popularityScore": 95,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed", "balanced"],
+    "averageVisitDurationHours": 8,
+    "isHeroExperience": true,
+    "primaryCategory": "mountain",
+    "imageSearchTerms": [
+      "Munnar tea gardens Kerala",
+      "Munnar tea plantations aerial",
+      "Munnar hills sunrise"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 96,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunrise",
+      "morning"
+    ],
+
+    "weatherSensitivity": "medium",
+
+    "recommendationReasons": [
+      "Iconic tea plantation landscapes",
+      "Excellent hill station for relaxed travel",
+      "One of Kerala's strongest hero destinations"
+    ]
+  },
+  {
+    "id": "alleppey",
+    "name": "Alleppey Backwaters",
+    "destinationId": "kerala",
+    "location": { "lat": 9.4981, "lng": 76.3388 },
+    "categories": ["nature"],
+    "experienceTypes": ["boating", "river", "sunset"],
+    "heroScore": 97,
+    "uniquenessScore": 94,
+    "popularityScore": 96,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed"],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "backwater",
+    "imageSearchTerms": [
+      "Alleppey backwaters houseboat",
+      "Alappuzha backwaters Kerala",
+      "Kerala houseboat Alleppey"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 94,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunrise",
+      "sunset"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "World-famous backwater experience",
+      "Perfect for houseboat and slow travel",
+      "Highly recommended for couples"
+    ]
+  },
+  {
+    "id": "thekkady",
+    "name": "Thekkady",
+    "destinationId": "kerala",
+    "location": { "lat": 9.6031, "lng": 77.1610 },
+    "categories": ["wildlife", "nature"],
+    "experienceTypes": ["wildlife_safari", "boating"],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 86,
+    "energyLevel": "medium",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 4,
+    "isHeroExperience": true,
+    "primaryCategory": "wildlife",
+    "imageSearchTerms": [
+      "Periyar Wildlife Sanctuary Thekkady",
+      "Thekkady lake safari",
+      "Periyar tiger reserve Kerala"
+    ],
+    "heroImage": "",
+    "imagePriority": "normal",
+    "imageStrategy": "search",
+    "photographyScore": 86,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Premier wildlife destination in Kerala",
+      "Unique safari and lake experiences",
+      "Strong balance of nature and adventure"
+    ]
+  },
+  {
+    "id": "fort_kochi",
+    "name": "Fort Kochi",
+    "destinationId": "kerala",
+    "location": { "lat": 9.9654, "lng": 76.2425 },
+    "categories": ["culture", "food"],
+    "experienceTypes": ["heritage_walk", "food_trail"],
+    "heroScore": 82,
+    "uniquenessScore": 84,
+    "popularityScore": 88,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed"],
+    "averageVisitDurationHours": 3,
+    "isHeroExperience": false,
+    "primaryCategory": "heritage",
+    "imageSearchTerms": [
+      "Fort Kochi Chinese fishing nets",
+      "Fort Kochi heritage street",
+      "Fort Kochi Kerala colonial architecture"
+    ],
+    "heroImage": "",
+    "imagePriority": "normal",
+    "imageStrategy": "search",
+    "photographyScore": 82,
+    "crowdLevel": "high",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunset",
+      "evening"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Historic colonial architecture",
+      "Excellent food and cultural experiences",
+      "Ideal for heritage walks"
+    ]
+  },
+  {
+    "id": "athirappilly_falls",
+    "name": "Athirappilly Falls",
+    "destinationId": "kerala",
+    "location": { "lat": 10.2850, "lng": 76.5690 },
+    "categories": ["nature"],
+    "experienceTypes": ["waterfall", "photography"],
+    "heroScore": 91,
+    "uniquenessScore": 87,
+    "popularityScore": 89,
+    "energyLevel": "medium",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 2,
+    "isHeroExperience": true,
+    "primaryCategory": "waterfall",
+    "imageSearchTerms": [
+      "Athirappilly Waterfalls Kerala",
+      "Athirappilly Falls aerial",
+      "Niagara of India Athirappilly"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 92,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning"
+    ],
+
+    "weatherSensitivity": "high",
+
+    "recommendationReasons": [
+      "Largest waterfall in Kerala",
+      "Exceptional monsoon scenery",
+      "Strong hero attraction for nature lovers"
+    ]
+  },
+
+  {
+    "id": "gangtok",
+    "name": "Gangtok",
+    "destinationId": "sikkim",
+    "location": { "lat": 27.3389, "lng": 88.6065 },
+    "categories": ["culture", "photography"],
+    "experienceTypes": ["market_exploration", "viewpoint"],
+    "heroScore": 85,
+    "uniquenessScore": 82,
+    "popularityScore": 90,
+    "energyLevel": "low",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": false,
+    "primaryCategory": "hill_station",
+    "imageSearchTerms": [
+      "Gangtok city viewpoint",
+      "Gangtok MG Marg",
+      "Gangtok Himalayan city"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 85,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "day",
+      "evening"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Gateway to Sikkim experiences",
+      "Excellent mountain city atmosphere",
+      "Good mix of culture and scenery"
+    ]
+  },
+  {
+    "id": "yumthang_valley",
+    "name": "Yumthang Valley",
+    "destinationId": "sikkim",
+    "location": { "lat": 27.7966, "lng": 88.7011 },
+    "categories": ["nature", "photography"],
+    "experienceTypes": ["viewpoint", "photography"],
+    "heroScore": 97,
+    "uniquenessScore": 96,
+    "popularityScore": 90,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed", "balanced"],
+    "averageVisitDurationHours": 4,
+    "isHeroExperience": true,
+    "primaryCategory": "valley",
+    "imageSearchTerms": [
+      "Yumthang Valley flowers",
+      "Yumthang Valley Sikkim",
+      "Valley of Flowers Sikkim"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 98,
+    "crowdLevel": "low",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": false,
+
+    "idealVisitTime": [
+      "morning"
+    ],
+
+    "weatherSensitivity": "high",
+
+    "recommendationReasons": [
+      "Known as the Valley of Flowers",
+      "One of India's best landscape photography locations",
+      "Signature Himalayan experience"
+    ]
+  },
+  {
+    "id": "gurudongmar_lake",
+    "name": "Gurudongmar Lake",
+    "destinationId": "sikkim",
+    "location": { "lat": 28.0200, "lng": 88.7100 },
+    "categories": ["nature", "photography"],
+    "experienceTypes": ["lake", "viewpoint", "photography"],
+    "heroScore": 99,
+    "uniquenessScore": 99,
+    "popularityScore": 91,
+    "energyLevel": "medium",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 3,
+    "isHeroExperience": true,
+    "primaryCategory": "lake",
+    "imageSearchTerms": [
+      "Gurudongmar Lake Sikkim",
+      "Gurudongmar high altitude lake",
+      "Gurudongmar turquoise lake"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 99,
+    "crowdLevel": "low",
+
+    "familyFriendly": false,
+    "coupleFriendly": true,
+    "seniorFriendly": false,
+
+    "idealVisitTime": [
+      "morning"
+    ],
+
+    "weatherSensitivity": "high",
+
+    "recommendationReasons": [
+      "One of the highest lakes in the world",
+      "Extraordinary Himalayan scenery",
+      "Bucket-list hero experience"
+    ]
+  },
+
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "destinationId": "rajasthan",
+    "location": { "lat": 26.9124, "lng": 75.7873 },
+    "categories": ["culture"],
+    "experienceTypes": ["heritage_walk", "market_exploration"],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 97,
+    "energyLevel": "medium",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 8,
+    "isHeroExperience": true,
+    "primaryCategory": "heritage",
+    "imageSearchTerms": [
+      "Hawa Mahal Jaipur",
+      "Jaipur Pink City",
+      "Amber Fort Jaipur"
+    ],
+    "heroImage": "",
+    "imagePriority": "normal",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "high",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "Rich royal heritage and architecture",
+      "Excellent shopping and cultural experiences",
+      "Must-visit city in Rajasthan"
+    ]
+  },
+  {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "destinationId": "rajasthan",
+    "location": { "lat": 24.5854, "lng": 73.7125 },
+    "categories": ["culture", "photography"],
+    "experienceTypes": ["lake", "sunset", "heritage_walk"],
+    "heroScore": 95,
+    "uniquenessScore": 92,
+    "popularityScore": 94,
+    "energyLevel": "low",
+    "recommendedPace": ["relaxed"],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "lake_city",
+    "imageSearchTerms": [
+      "Udaipur City Palace",
+      "Udaipur Lake Pichola",
+      "Udaipur sunset lake"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 96,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunset",
+      "evening"
+    ],
+
+    "weatherSensitivity": "low",
+
+    "recommendationReasons": [
+      "India's most romantic lake city",
+      "Outstanding sunset viewpoints",
+      "Perfect for relaxed cultural travel"
+    ]
+  },
+  {
+    "id": "jaisalmer",
+    "name": "Jaisalmer",
+    "destinationId": "rajasthan",
+    "location": { "lat": 26.9157, "lng": 70.9083 },
+    "categories": ["culture", "adventure"],
+    "experienceTypes": ["camping", "photography", "sunset"],
+    "heroScore": 96,
+    "uniquenessScore": 97,
+    "popularityScore": 92,
+    "energyLevel": "medium",
+    "recommendedPace": ["balanced"],
+    "averageVisitDurationHours": 8,
+    "isHeroExperience": true,
+    "primaryCategory": "desert",
+    "imageSearchTerms": [
+      "Jaisalmer Golden Fort",
+      "Sam Sand Dunes Jaisalmer",
+      "Jaisalmer desert sunset"
+    ],
+    "heroImage": "",
+    "imagePriority": "normal",
+    "imageStrategy": "search",
+    "photographyScore": 98,
+    "crowdLevel": "medium",
+
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+
+    "idealVisitTime": [
+      "sunrise",
+      "sunset"
+    ],
+
+    "weatherSensitivity": "medium",
+
+    "recommendationReasons": [
+      "Unique desert landscapes and golden architecture",
+      "Best camel safari experience in India",
+      "One of Rajasthan's strongest hero destinations"
+    ]
+  }
+]

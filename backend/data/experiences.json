@@ -1,0 +1,142 @@
+[
+  {
+    "id": "sunrise",
+    "name": "Sunrise Experience",
+    "energyLevel": "low",
+    "idealTime": "morning",
+    "memoryValue": 95
+  },
+  {
+    "id": "sunset",
+    "name": "Sunset Experience",
+    "energyLevel": "low",
+    "idealTime": "evening",
+    "memoryValue": 95
+  },
+  {
+    "id": "waterfall",
+    "name": "Waterfall Exploration",
+    "energyLevel": "medium",
+    "idealTime": "day",
+    "memoryValue": 85
+  },
+  {
+    "id": "lake",
+    "name": "Lake Experience",
+    "energyLevel": "low",
+    "idealTime": "day",
+    "memoryValue": 80
+  },
+  {
+    "id": "river",
+    "name": "River Experience",
+    "energyLevel": "low",
+    "idealTime": "day",
+    "memoryValue": 85
+  },
+  {
+    "id": "boating",
+    "name": "Boating Experience",
+    "energyLevel": "low",
+    "idealTime": "day",
+    "memoryValue": 82
+  },
+  {
+    "id": "scenic_drive",
+    "name": "Scenic Drive",
+    "energyLevel": "low",
+    "idealTime": "any",
+    "memoryValue": 88
+  },
+  {
+    "id": "viewpoint",
+    "name": "Viewpoint Experience",
+    "energyLevel": "low",
+    "idealTime": "sunrise_sunset",
+    "memoryValue": 90
+  },
+  {
+    "id": "trek",
+    "name": "Trekking",
+    "energyLevel": "high",
+    "idealTime": "morning",
+    "memoryValue": 92
+  },
+  {
+    "id": "photography",
+    "name": "Photography Experience",
+    "energyLevel": "low",
+    "idealTime": "golden_hour",
+    "memoryValue": 95
+  },
+  {
+    "id": "village_life",
+    "name": "Village Life Experience",
+    "energyLevel": "low",
+    "idealTime": "day",
+    "memoryValue": 78
+  },
+  {
+    "id": "wildlife_safari",
+    "name": "Wildlife Safari",
+    "energyLevel": "medium",
+    "idealTime": "morning",
+    "memoryValue": 90
+  },
+  {
+    "id": "food_trail",
+    "name": "Food Trail",
+    "energyLevel": "low",
+    "idealTime": "evening",
+    "memoryValue": 85
+  },
+  {
+    "id": "cafe_hopping",
+    "name": "Cafe Hopping",
+    "energyLevel": "low",
+    "idealTime": "afternoon",
+    "memoryValue": 72
+  },
+  {
+    "id": "market_exploration",
+    "name": "Market Exploration",
+    "energyLevel": "medium",
+    "idealTime": "evening",
+    "memoryValue": 75
+  },
+  {
+    "id": "camping",
+    "name": "Camping",
+    "energyLevel": "medium",
+    "idealTime": "overnight",
+    "memoryValue": 93
+  },
+  {
+    "id": "adventure_sports",
+    "name": "Adventure Sports",
+    "energyLevel": "high",
+    "idealTime": "day",
+    "memoryValue": 94
+  },
+  {
+    "id": "temple_visit",
+    "name": "Temple Visit",
+    "energyLevel": "low",
+    "idealTime": "morning",
+    "memoryValue": 80
+  },
+  {
+    "id": "heritage_walk",
+    "name": "Heritage Walk",
+    "energyLevel": "medium",
+    "idealTime": "morning",
+    "memoryValue": 84
+  },
+  {
+    "id": "wellness_retreat",
+    "name": "Wellness Retreat",
+    "energyLevel": "low",
+    "idealTime": "any",
+    "memoryValue": 87
+  }
+]

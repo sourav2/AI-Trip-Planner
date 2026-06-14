@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-green: #16A34A;
+  --dark: #111111;
+  --text: #111827;
+  --muted: #6B7280;
+  --soft-bg: #F8FAF8;
+  --borders: #E5E7EB;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+}
+
+@layer base {
+  body {
+    background-color: var(--soft-bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    color: var(--dark);
+  }
+}
+
+/* Custom premium transitions */
+.premium-transition {
+  transition: transform 250ms ease, box-shadow 250ms ease, opacity 250ms ease;
+}
+
+/* Premium Card Shadow & Hover styling from User Specs */
+.premium-card {
+  box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.10);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.premium-card:hover {
+  box-shadow: 0px 18px 24px rgba(0, 0, 0, 0.14);
+  transform: scale(1.02);
+}
+
+/* Smooth custom scrollbars for chat and dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Shimmer Loading Skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 37%, #f3f4f6 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.dark-shimmer {
+  background: linear-gradient(90deg, #eaeaea 25%, #dceaf7 37%, #eaeaea 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Rotating Minimal Loader */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Design System Typography Scale */
+.text-page-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.text-section-heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.text-card-heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.text-body-custom {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-small-custom {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.font-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Reusable Loading animations */
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom premium map popups overrides */
+.custom-leaflet-popup .leaflet-popup-content-wrapper {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: 0 !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-close-button {
+  color: #94A3B8 !important;
+  font-size: 16px !important;
+  padding: 8px !important;
+  z-index: 100 !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-close-button:hover {
+  color: #F8FAFC !important;
+}
+
+/* ========================================================
+   DESIGN SYSTEM BUTTON CLASSES (UNIFIED BUTTON SPEC)
+   ======================================================== */
+.btn-premium {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 8px 16px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* icon spacing */
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-premium:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.btn-premium:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Black Premium Button (AI Assistant Style) */
+.btn-premium-dark {
+  background-color: #111111;
+  border-color: #2D3748;
+  color: #FFFFFF;
+}
+.btn-premium-dark:hover:not(:disabled) {
+  background-color: #1F2937;
+  border-color: #10B981;
+}
+
+/* Green Primary Button */
+.btn-premium-primary {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+}
+.btn-premium-primary:hover:not(:disabled) {
+  background-color: #15803D; /* darker green hover */
+}
+
+/* White/Gray Outline Secondary Button */
+.btn-premium-secondary {
+  background-color: #FFFFFF;
+  border-color: var(--borders);
+  color: #374151; /* gray-700 */
+}
+.btn-premium-secondary:hover:not(:disabled) {
+  border-color: var(--dark);
+  color: var(--dark);
+}
+
+/* Red Danger Button */
+.btn-premium-danger {
+  background-color: var(--danger);
+  color: #FFFFFF;
+}
+.btn-premium-danger:hover:not(:disabled) {
+  background-color: #DC2626; /* darker red hover */
+}
+
+/* Green Outline / Added Button */
+.btn-premium-success-outline {
+  background-color: #F0FDF4; /* soft green */
+  border-color: #BBF7D0; /* soft green borders */
+  color: #15803D;
+}
+.btn-premium-success-outline:hover:not(:disabled) {
+  background-color: #FEE2E2; /* soft red */
+  border-color: #FECACA; /* soft red borders */
+  color: #DC2626;
+}
+
+/* Indigo Accent Button (Save/Restore) */
+.btn-premium-indigo {
+  background-color: #4F46E5;
+  color: #FFFFFF;
+}
+.btn-premium-indigo:hover:not(:disabled) {
+  background-color: #4338CA;
+}
+
+/* Amber Accent Button (Download JPG/Alternative) */
+.btn-premium-amber {
+  background-color: #D97706;
+  color: #FFFFFF;
+}
+.btn-premium-amber:hover:not(:disabled) {
+  background-color: #B45309;
+}
+
+
+

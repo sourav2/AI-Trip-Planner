@@ -1,0 +1,42 @@
+[
+  {
+    "id": "nature",
+    "name": "Nature"
+  },
+  {
+    "id": "adventure",
+    "name": "Adventure"
+  },
+  {
+    "id": "culture",
+    "name": "Culture & Heritage"
+  },
+  {
+    "id": "spiritual",
+    "name": "Spiritual"
+  },
+  {
+    "id": "wildlife",
+    "name": "Wildlife"
+  },
+  {
+    "id": "food",
+    "name": "Food & Local Life"
+  },
+  {
+    "id": "beach",
+    "name": "Beaches & Coastline"
+  },
+  {
+    "id": "urban",
+    "name": "Urban Experiences"
+  },
+  {
+    "id": "photography",
+    "name": "Photography"
+  },
+  {
+    "id": "wellness",
+    "name": "Wellness"
+  }
+]

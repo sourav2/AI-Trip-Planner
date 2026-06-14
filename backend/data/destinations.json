@@ -1,0 +1,182 @@
+[
+  {
+    "id": "meghalaya",
+    "name": "Meghalaya",
+    "country": "India",
+    "type": "state",
+    "identity": "Cloud Kingdom of India",
+
+    "scores": {
+      "nature": 95,
+      "adventure": 85,
+      "culture": 65,
+      "relaxation": 80,
+      "food": 55,
+      "photography": 95,
+      "luxury": 40
+    },
+
+    "idealDuration": {
+      "min": 5,
+      "max": 8
+    },
+
+    "bestPace": [
+      "balanced",
+      "relaxed"
+    ],
+
+    "bestSeasons": [
+      "post_monsoon",
+      "winter"
+    ],
+
+    "heroExperiences": [
+      "dawki",
+      "living_root_bridge",
+      "laitlum_canyon",
+      "umiam_lake"
+    ],
+
+    "character": [
+      "scenic",
+      "slow",
+      "immersive"
+    ]
+  },
+
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "country": "India",
+    "type": "state",
+    "identity": "Gods Own Country",
+
+    "scores": {
+      "nature": 92,
+      "adventure": 65,
+      "culture": 80,
+      "relaxation": 95,
+      "food": 85,
+      "photography": 88,
+      "luxury": 75
+    },
+
+    "idealDuration": {
+      "min": 6,
+      "max": 10
+    },
+
+    "bestPace": [
+      "relaxed",
+      "balanced"
+    ],
+
+    "bestSeasons": [
+      "winter",
+      "post_monsoon"
+    ],
+
+    "heroExperiences": [
+      "munnar",
+      "alleppey",
+      "thekkady",
+      "fort_kochi"
+    ],
+
+    "character": [
+      "comfortable",
+      "scenic",
+      "diverse"
+    ]
+  },
+
+  {
+    "id": "sikkim",
+    "name": "Sikkim",
+    "country": "India",
+    "type": "state",
+    "identity": "Gateway to the Himalayas",
+
+    "scores": {
+      "nature": 94,
+      "adventure": 92,
+      "culture": 75,
+      "relaxation": 70,
+      "food": 60,
+      "photography": 98,
+      "luxury": 55
+    },
+
+    "idealDuration": {
+      "min": 5,
+      "max": 8
+    },
+
+    "bestPace": [
+      "balanced"
+    ],
+
+    "bestSeasons": [
+      "spring",
+      "autumn"
+    ],
+
+    "heroExperiences": [
+      "gurudongmar_lake",
+      "yumthang_valley",
+      "nathula_pass",
+      "gangtok"
+    ],
+
+    "character": [
+      "mountainous",
+      "adventurous",
+      "scenic"
+    ]
+  },
+
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "country": "India",
+    "type": "state",
+    "identity": "Land of Forts and Deserts",
+
+    "scores": {
+      "nature": 45,
+      "adventure": 60,
+      "culture": 98,
+      "relaxation": 65,
+      "food": 85,
+      "photography": 95,
+      "luxury": 90
+    },
+
+    "idealDuration": {
+      "min": 6,
+      "max": 10
+    },
+
+    "bestPace": [
+      "balanced"
+    ],
+
+    "bestSeasons": [
+      "winter"
+    ],
+
+    "heroExperiences": [
+      "jaipur",
+      "jodhpur",
+      "jaisalmer",
+      "udaipur"
+    ],
+
+    "character": [
+      "historic",
+      "royal",
+      "cultural"
+    ]
+  }
+]
