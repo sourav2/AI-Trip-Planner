@@ -26,7 +26,12 @@ async def get_country_code_cached(lat: float, lon: float) -> str:
     Rounds coordinates to 3 decimal places (~110m grid) for better caching behavior.
     """
     # 1. Local Bounding Box check for India to bypass Nominatim network calls
-    if 8.0 <= lat <= 37.6 and 68.7 <= lon <= 97.2:
+    INDIA_SAFE_CORE = (
+    8.0 <= lat <= 37.5 and
+    68.0 <= lon <= 97.5
+)
+
+    if INDIA_SAFE_CORE:
         return "in"
 
     cache_key = (round(lat, 3), round(lon, 3))
@@ -89,7 +94,7 @@ async def get_route(coords: list[list[float]], allow_international_transit: bool
             
             if geom:
                 # Sample intermediate points along the route geometry to check for border crossings
-                num_samples = min(5, len(geom))
+                num_samples = min(50, len(geom))
                 crosses_border = False
                 border_point = None
                 
@@ -97,7 +102,10 @@ async def get_route(coords: list[list[float]], allow_international_transit: bool
                     sample_idx = (len(geom) * idx) // num_samples
                     sample_pt = geom[sample_idx]
                     sample_cc = await get_country_code_cached(sample_pt[0], sample_pt[1])
-                    if sample_cc and sample_cc != domestic_cc:
+                    logger.info(
+                        f"ROUTE SAMPLE {idx}: lat={sample_pt[0]}, lon={sample_pt[1]}, country={sample_cc}"
+                    )
+                    if sample_cc != domestic_cc:
                         crosses_border = True
                         border_point = sample_pt
                         logger.warning(f"Cross-border route detected! Route enters country '{sample_cc}' at {sample_pt}. Seeking domestic detour within '{domestic_cc}'.")

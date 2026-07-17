@@ -1,688 +1,1940 @@
 [
   {
-    "id": "dawki",
-    "name": "Dawki River",
-    "destinationId": "meghalaya",
-    "location": { "lat": 25.1500, "lng": 92.0167 },
-    "categories": ["nature", "photography"],
-    "experienceTypes": ["river", "boating", "photography"],
-    "heroScore": 98,
-    "uniquenessScore": 95,
-    "popularityScore": 92,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed", "balanced"],
-    "averageVisitDurationHours": 3,
-    "isHeroExperience": true,
-    "primaryCategory": "river",
-    "imageSearchTerms": [
-      "Umngot River Dawki Meghalaya",
-      "Dawki crystal clear river",
-      "Dawki boating Meghalaya"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 99,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "morning",
-      "day"
-    ],
-
-    "weatherSensitivity": "high",
-
-    "recommendationReasons": [
-      "Crystal clear river experience",
-      "One of the most photogenic locations in Meghalaya",
-      "Suitable for relaxed trips and couples"
-    ]
-  },
-  {
-    "id": "living_root_bridge",
-    "name": "Living Root Bridge",
-    "destinationId": "meghalaya",
-    "location": { "lat": 25.2440, "lng": 91.7320 },
-    "categories": ["nature", "adventure"],
-    "experienceTypes": ["trek", "photography"],
-    "heroScore": 99,
-    "uniquenessScore": 100,
-    "popularityScore": 95,
-    "energyLevel": "high",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 5,
-    "isHeroExperience": true,
-    "primaryCategory": "forest",
-    "imageSearchTerms": [
-      "Double Decker Living Root Bridge Meghalaya",
-      "Living Root Bridge Cherrapunji",
-      "Root Bridge Meghalaya Trek"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 98,
-    "crowdLevel": "medium",
-
-    "familyFriendly": false,
-    "coupleFriendly": true,
-    "seniorFriendly": false,
-
-    "idealVisitTime": [
-      "morning"
-    ],
-
-    "weatherSensitivity": "high",
-
-    "recommendationReasons": [
-      "Unique living root architecture found nowhere else",
-      "One of Meghalaya's signature hero experiences",
-      "Excellent trekking and photography opportunity"
-    ]
-  },
-  {
-    "id": "laitlum_canyon",
-    "name": "Laitlum Canyon",
-    "destinationId": "meghalaya",
-    "location": { "lat": 25.5730, "lng": 91.9230 },
-    "categories": ["nature", "photography"],
-    "experienceTypes": ["viewpoint", "sunset", "photography"],
-    "heroScore": 95,
-    "uniquenessScore": 90,
-    "popularityScore": 85,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed", "balanced"],
-    "averageVisitDurationHours": 2,
-    "isHeroExperience": true,
-    "primaryCategory": "canyon",
-    "imageSearchTerms": [
-      "Laitlum Canyon Meghalaya",
-      "Laitlum Grand Canyon Meghalaya",
-      "Laitlum viewpoint clouds"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 97,
-    "crowdLevel": "low",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "sunrise",
-      "sunset"
-    ],
-
-    "weatherSensitivity": "medium",
-
-    "recommendationReasons": [
-      "Spectacular panoramic canyon views",
-      "Ideal for photography and sunset watching",
-      "Peaceful and uncrowded experience"
-    ]
-  },
-  {
-    "id": "umiam_lake",
-    "name": "Umiam Lake",
-    "destinationId": "meghalaya",
-    "location": { "lat": 25.6640, "lng": 91.8970 },
-    "categories": ["nature"],
-    "experienceTypes": ["lake", "boating", "sunset"],
-    "heroScore": 88,
-    "uniquenessScore": 80,
-    "popularityScore": 84,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed"],
-    "averageVisitDurationHours": 2,
-    "isHeroExperience": false,
-    "primaryCategory": "lake",
-    "imageSearchTerms": [
-      "Umiam Lake Shillong",
-      "Barapani Lake Meghalaya",
-      "Umiam Lake sunset"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 88,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "morning",
-      "sunset"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "Beautiful lakeside relaxation stop",
-      "Suitable for boating and family outings",
-      "Convenient stop near Shillong"
-    ]
-  },
-  {
-    "id": "mawlynnong",
-    "name": "Mawlynnong Village",
-    "destinationId": "meghalaya",
-    "location": { "lat": 25.2030, "lng": 91.9130 },
-    "categories": ["culture", "nature"],
-    "experienceTypes": ["village_life", "photography"],
-    "heroScore": 85,
-    "uniquenessScore": 82,
-    "popularityScore": 80,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed"],
-    "averageVisitDurationHours": 2,
-    "isHeroExperience": false,
-    "primaryCategory": "village",
-    "imageSearchTerms": [
-      "Mawlynnong cleanest village Asia",
-      "Mawlynnong Meghalaya village",
-      "Mawlynnong skywalk"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 84,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "morning",
-      "day"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "Known as one of Asia's cleanest villages",
-      "Authentic local village experience",
-      "Excellent cultural immersion opportunity"
-    ]
-  },
-
-  {
-    "id": "munnar",
-    "name": "Munnar",
-    "destinationId": "kerala",
-    "location": { "lat": 10.0889, "lng": 77.0595 },
-    "categories": ["nature", "photography"],
-    "experienceTypes": ["viewpoint", "scenic_drive", "sunrise"],
-    "heroScore": 96,
-    "uniquenessScore": 90,
-    "popularityScore": 95,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed", "balanced"],
-    "averageVisitDurationHours": 8,
-    "isHeroExperience": true,
-    "primaryCategory": "mountain",
-    "imageSearchTerms": [
-      "Munnar tea gardens Kerala",
-      "Munnar tea plantations aerial",
-      "Munnar hills sunrise"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 96,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "sunrise",
-      "morning"
-    ],
-
-    "weatherSensitivity": "medium",
-
-    "recommendationReasons": [
-      "Iconic tea plantation landscapes",
-      "Excellent hill station for relaxed travel",
-      "One of Kerala's strongest hero destinations"
-    ]
-  },
-  {
-    "id": "alleppey",
-    "name": "Alleppey Backwaters",
-    "destinationId": "kerala",
-    "location": { "lat": 9.4981, "lng": 76.3388 },
-    "categories": ["nature"],
-    "experienceTypes": ["boating", "river", "sunset"],
-    "heroScore": 97,
-    "uniquenessScore": 94,
-    "popularityScore": 96,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed"],
-    "averageVisitDurationHours": 6,
-    "isHeroExperience": true,
-    "primaryCategory": "backwater",
-    "imageSearchTerms": [
-      "Alleppey backwaters houseboat",
-      "Alappuzha backwaters Kerala",
-      "Kerala houseboat Alleppey"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 94,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "sunrise",
-      "sunset"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "World-famous backwater experience",
-      "Perfect for houseboat and slow travel",
-      "Highly recommended for couples"
-    ]
-  },
-  {
-    "id": "thekkady",
-    "name": "Thekkady",
-    "destinationId": "kerala",
-    "location": { "lat": 9.6031, "lng": 77.1610 },
-    "categories": ["wildlife", "nature"],
-    "experienceTypes": ["wildlife_safari", "boating"],
-    "heroScore": 90,
-    "uniquenessScore": 88,
-    "popularityScore": 86,
-    "energyLevel": "medium",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 4,
-    "isHeroExperience": true,
-    "primaryCategory": "wildlife",
-    "imageSearchTerms": [
-      "Periyar Wildlife Sanctuary Thekkady",
-      "Thekkady lake safari",
-      "Periyar tiger reserve Kerala"
-    ],
-    "heroImage": "",
-    "imagePriority": "normal",
-    "imageStrategy": "search",
-    "photographyScore": 86,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "morning"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "Premier wildlife destination in Kerala",
-      "Unique safari and lake experiences",
-      "Strong balance of nature and adventure"
-    ]
-  },
-  {
-    "id": "fort_kochi",
-    "name": "Fort Kochi",
-    "destinationId": "kerala",
-    "location": { "lat": 9.9654, "lng": 76.2425 },
-    "categories": ["culture", "food"],
-    "experienceTypes": ["heritage_walk", "food_trail"],
-    "heroScore": 82,
-    "uniquenessScore": 84,
-    "popularityScore": 88,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed"],
-    "averageVisitDurationHours": 3,
-    "isHeroExperience": false,
-    "primaryCategory": "heritage",
-    "imageSearchTerms": [
-      "Fort Kochi Chinese fishing nets",
-      "Fort Kochi heritage street",
-      "Fort Kochi Kerala colonial architecture"
-    ],
-    "heroImage": "",
-    "imagePriority": "normal",
-    "imageStrategy": "search",
-    "photographyScore": 82,
-    "crowdLevel": "high",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "sunset",
-      "evening"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "Historic colonial architecture",
-      "Excellent food and cultural experiences",
-      "Ideal for heritage walks"
-    ]
-  },
-  {
-    "id": "athirappilly_falls",
-    "name": "Athirappilly Falls",
-    "destinationId": "kerala",
-    "location": { "lat": 10.2850, "lng": 76.5690 },
-    "categories": ["nature"],
-    "experienceTypes": ["waterfall", "photography"],
-    "heroScore": 91,
-    "uniquenessScore": 87,
-    "popularityScore": 89,
-    "energyLevel": "medium",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 2,
-    "isHeroExperience": true,
-    "primaryCategory": "waterfall",
-    "imageSearchTerms": [
-      "Athirappilly Waterfalls Kerala",
-      "Athirappilly Falls aerial",
-      "Niagara of India Athirappilly"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 92,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "morning"
-    ],
-
-    "weatherSensitivity": "high",
-
-    "recommendationReasons": [
-      "Largest waterfall in Kerala",
-      "Exceptional monsoon scenery",
-      "Strong hero attraction for nature lovers"
-    ]
-  },
-
-  {
-    "id": "gangtok",
-    "name": "Gangtok",
-    "destinationId": "sikkim",
-    "location": { "lat": 27.3389, "lng": 88.6065 },
-    "categories": ["culture", "photography"],
-    "experienceTypes": ["market_exploration", "viewpoint"],
-    "heroScore": 85,
-    "uniquenessScore": 82,
-    "popularityScore": 90,
-    "energyLevel": "low",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 6,
-    "isHeroExperience": false,
-    "primaryCategory": "hill_station",
-    "imageSearchTerms": [
-      "Gangtok city viewpoint",
-      "Gangtok MG Marg",
-      "Gangtok Himalayan city"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 85,
-    "crowdLevel": "medium",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": true,
-
-    "idealVisitTime": [
-      "day",
-      "evening"
-    ],
-
-    "weatherSensitivity": "low",
-
-    "recommendationReasons": [
-      "Gateway to Sikkim experiences",
-      "Excellent mountain city atmosphere",
-      "Good mix of culture and scenery"
-    ]
-  },
-  {
-    "id": "yumthang_valley",
-    "name": "Yumthang Valley",
-    "destinationId": "sikkim",
-    "location": { "lat": 27.7966, "lng": 88.7011 },
-    "categories": ["nature", "photography"],
-    "experienceTypes": ["viewpoint", "photography"],
-    "heroScore": 97,
-    "uniquenessScore": 96,
-    "popularityScore": 90,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed", "balanced"],
-    "averageVisitDurationHours": 4,
-    "isHeroExperience": true,
-    "primaryCategory": "valley",
-    "imageSearchTerms": [
-      "Yumthang Valley flowers",
-      "Yumthang Valley Sikkim",
-      "Valley of Flowers Sikkim"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 98,
-    "crowdLevel": "low",
-
-    "familyFriendly": true,
-    "coupleFriendly": true,
-    "seniorFriendly": false,
-
-    "idealVisitTime": [
-      "morning"
-    ],
-
-    "weatherSensitivity": "high",
-
-    "recommendationReasons": [
-      "Known as the Valley of Flowers",
-      "One of India's best landscape photography locations",
-      "Signature Himalayan experience"
-    ]
-  },
-  {
-    "id": "gurudongmar_lake",
-    "name": "Gurudongmar Lake",
-    "destinationId": "sikkim",
-    "location": { "lat": 28.0200, "lng": 88.7100 },
-    "categories": ["nature", "photography"],
-    "experienceTypes": ["lake", "viewpoint", "photography"],
-    "heroScore": 99,
-    "uniquenessScore": 99,
-    "popularityScore": 91,
-    "energyLevel": "medium",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 3,
-    "isHeroExperience": true,
-    "primaryCategory": "lake",
-    "imageSearchTerms": [
-      "Gurudongmar Lake Sikkim",
-      "Gurudongmar high altitude lake",
-      "Gurudongmar turquoise lake"
-    ],
-    "heroImage": "",
-    "imagePriority": "high",
-    "imageStrategy": "search",
-    "photographyScore": 99,
-    "crowdLevel": "low",
-
-    "familyFriendly": false,
-    "coupleFriendly": true,
-    "seniorFriendly": false,
-
-    "idealVisitTime": [
-      "morning"
-    ],
-
-    "weatherSensitivity": "high",
-
-    "recommendationReasons": [
-      "One of the highest lakes in the world",
-      "Extraordinary Himalayan scenery",
-      "Bucket-list hero experience"
-    ]
-  },
-
-  {
-    "id": "jaipur",
-    "name": "Jaipur",
+    "id": "jodhpur",
+    "name": "Jodhpur",
     "destinationId": "rajasthan",
-    "location": { "lat": 26.9124, "lng": 75.7873 },
-    "categories": ["culture"],
-    "experienceTypes": ["heritage_walk", "market_exploration"],
+    "location": {
+      "lat": 26.2389,
+      "lng": 73.0243
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
     "heroScore": 90,
     "uniquenessScore": 88,
-    "popularityScore": 97,
+    "popularityScore": 90,
     "energyLevel": "medium",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 8,
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
     "isHeroExperience": true,
-    "primaryCategory": "heritage",
+    "primaryCategory": "tourism_hub",
     "imageSearchTerms": [
-      "Hawa Mahal Jaipur",
-      "Jaipur Pink City",
-      "Amber Fort Jaipur"
+      "Jodhpur",
+      "Rajasthan",
+      "Jodhpur tourism"
     ],
     "heroImage": "",
-    "imagePriority": "normal",
+    "imagePriority": "high",
     "imageStrategy": "search",
     "photographyScore": 90,
-    "crowdLevel": "high",
-
+    "crowdLevel": "medium",
     "familyFriendly": true,
     "coupleFriendly": true,
     "seniorFriendly": true,
-
     "idealVisitTime": [
       "morning",
       "evening"
     ],
-
     "weatherSensitivity": "low",
-
     "recommendationReasons": [
-      "Rich royal heritage and architecture",
-      "Excellent shopping and cultural experiences",
-      "Must-visit city in Rajasthan"
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
     ]
   },
   {
-    "id": "udaipur",
-    "name": "Udaipur",
+    "id": "pushkar",
+    "name": "Pushkar",
     "destinationId": "rajasthan",
-    "location": { "lat": 24.5854, "lng": 73.7125 },
-    "categories": ["culture", "photography"],
-    "experienceTypes": ["lake", "sunset", "heritage_walk"],
-    "heroScore": 95,
-    "uniquenessScore": 92,
-    "popularityScore": 94,
-    "energyLevel": "low",
-    "recommendedPace": ["relaxed"],
+    "location": {
+      "lat": 26.4898,
+      "lng": 74.5511
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
     "averageVisitDurationHours": 6,
     "isHeroExperience": true,
-    "primaryCategory": "lake_city",
+    "primaryCategory": "tourism_hub",
     "imageSearchTerms": [
-      "Udaipur City Palace",
-      "Udaipur Lake Pichola",
-      "Udaipur sunset lake"
+      "Pushkar",
+      "Rajasthan",
+      "Pushkar tourism"
     ],
     "heroImage": "",
     "imagePriority": "high",
     "imageStrategy": "search",
-    "photographyScore": 96,
+    "photographyScore": 90,
     "crowdLevel": "medium",
-
     "familyFriendly": true,
     "coupleFriendly": true,
     "seniorFriendly": true,
-
     "idealVisitTime": [
-      "sunset",
+      "morning",
       "evening"
     ],
-
     "weatherSensitivity": "low",
-
     "recommendationReasons": [
-      "India's most romantic lake city",
-      "Outstanding sunset viewpoints",
-      "Perfect for relaxed cultural travel"
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
     ]
   },
   {
-    "id": "jaisalmer",
-    "name": "Jaisalmer",
+    "id": "mount_abu",
+    "name": "Mount Abu",
     "destinationId": "rajasthan",
-    "location": { "lat": 26.9157, "lng": 70.9083 },
-    "categories": ["culture", "adventure"],
-    "experienceTypes": ["camping", "photography", "sunset"],
-    "heroScore": 96,
-    "uniquenessScore": 97,
-    "popularityScore": 92,
+    "location": {
+      "lat": 24.5926,
+      "lng": 72.7156
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
     "energyLevel": "medium",
-    "recommendedPace": ["balanced"],
-    "averageVisitDurationHours": 8,
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
     "isHeroExperience": true,
-    "primaryCategory": "desert",
+    "primaryCategory": "tourism_hub",
     "imageSearchTerms": [
-      "Jaisalmer Golden Fort",
-      "Sam Sand Dunes Jaisalmer",
-      "Jaisalmer desert sunset"
+      "Mount Abu",
+      "Rajasthan",
+      "Mount Abu tourism"
     ],
     "heroImage": "",
-    "imagePriority": "normal",
+    "imagePriority": "high",
     "imageStrategy": "search",
-    "photographyScore": 98,
+    "photographyScore": 90,
     "crowdLevel": "medium",
-
     "familyFriendly": true,
     "coupleFriendly": true,
     "seniorFriendly": true,
-
     "idealVisitTime": [
-      "sunrise",
-      "sunset"
+      "morning",
+      "evening"
     ],
-
-    "weatherSensitivity": "medium",
-
+    "weatherSensitivity": "low",
     "recommendationReasons": [
-      "Unique desert landscapes and golden architecture",
-      "Best camel safari experience in India",
-      "One of Rajasthan's strongest hero destinations"
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "ranthambore",
+    "name": "Ranthambore",
+    "destinationId": "rajasthan",
+    "location": {
+      "lat": 26.0173,
+      "lng": 76.5026
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Ranthambore",
+      "Rajasthan",
+      "Ranthambore tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "chittorgarh",
+    "name": "Chittorgarh",
+    "destinationId": "rajasthan",
+    "location": {
+      "lat": 24.88,
+      "lng": 74.63
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Chittorgarh",
+      "Rajasthan",
+      "Chittorgarh tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "bikaner",
+    "name": "Bikaner",
+    "destinationId": "rajasthan",
+    "location": {
+      "lat": 28.0229,
+      "lng": 73.3119
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Bikaner",
+      "Rajasthan",
+      "Bikaner tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "bundi",
+    "name": "Bundi",
+    "destinationId": "rajasthan",
+    "location": {
+      "lat": 25.4381,
+      "lng": 75.6373
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Bundi",
+      "Rajasthan",
+      "Bundi tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Rajasthan",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "destinationId": "kerala",
+    "location": {
+      "lat": 11.6854,
+      "lng": 76.132
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Wayanad",
+      "Kerala",
+      "Wayanad tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Kerala",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "varkala",
+    "name": "Varkala",
+    "destinationId": "kerala",
+    "location": {
+      "lat": 8.7379,
+      "lng": 76.7163
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Varkala",
+      "Kerala",
+      "Varkala tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Kerala",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "kochi",
+    "name": "Kochi",
+    "destinationId": "kerala",
+    "location": {
+      "lat": 9.9312,
+      "lng": 76.2673
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Kochi",
+      "Kerala",
+      "Kochi tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Kerala",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "kovalam",
+    "name": "Kovalam",
+    "destinationId": "kerala",
+    "location": {
+      "lat": 8.4004,
+      "lng": 76.9784
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Kovalam",
+      "Kerala",
+      "Kovalam tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Kerala",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "shimla",
+    "name": "Shimla",
+    "destinationId": "himachal pradesh",
+    "location": {
+      "lat": 31.1048,
+      "lng": 77.1734
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Shimla",
+      "Himachal Pradesh",
+      "Shimla tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Himachal Pradesh",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "manali",
+    "name": "Manali",
+    "destinationId": "himachal pradesh",
+    "location": {
+      "lat": 32.2432,
+      "lng": 77.1892
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Manali",
+      "Himachal Pradesh",
+      "Manali tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Himachal Pradesh",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "kasol",
+    "name": "Kasol",
+    "destinationId": "himachal pradesh",
+    "location": {
+      "lat": 32.0094,
+      "lng": 77.3152
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Kasol",
+      "Himachal Pradesh",
+      "Kasol tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Himachal Pradesh",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "spiti",
+    "name": "Spiti",
+    "destinationId": "himachal pradesh",
+    "location": {
+      "lat": 32.2461,
+      "lng": 78.0347
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Spiti",
+      "Himachal Pradesh",
+      "Spiti tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Himachal Pradesh",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "nainital",
+    "name": "Nainital",
+    "destinationId": "uttarakhand",
+    "location": {
+      "lat": 29.3803,
+      "lng": 79.4636
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Nainital",
+      "Uttarakhand",
+      "Nainital tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Uttarakhand",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "destinationId": "uttarakhand",
+    "location": {
+      "lat": 30.4598,
+      "lng": 78.0644
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Mussoorie",
+      "Uttarakhand",
+      "Mussoorie tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Uttarakhand",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "destinationId": "uttarakhand",
+    "location": {
+      "lat": 30.0869,
+      "lng": 78.2676
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Rishikesh",
+      "Uttarakhand",
+      "Rishikesh tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Uttarakhand",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "auli",
+    "name": "Auli",
+    "destinationId": "uttarakhand",
+    "location": {
+      "lat": 30.5284,
+      "lng": 79.5669
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Auli",
+      "Uttarakhand",
+      "Auli tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Uttarakhand",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "panaji",
+    "name": "Panaji",
+    "destinationId": "goa",
+    "location": {
+      "lat": 15.4909,
+      "lng": 73.8278
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Panaji",
+      "Goa",
+      "Panaji tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Goa",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "calangute",
+    "name": "Calangute",
+    "destinationId": "goa",
+    "location": {
+      "lat": 15.5449,
+      "lng": 73.7553
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Calangute",
+      "Goa",
+      "Calangute tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Goa",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "palolem",
+    "name": "Palolem",
+    "destinationId": "goa",
+    "location": {
+      "lat": 15.009,
+      "lng": 74.023
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Palolem",
+      "Goa",
+      "Palolem tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Goa",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "destinationId": "maharashtra",
+    "location": {
+      "lat": 19.076,
+      "lng": 72.8777
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Mumbai",
+      "Maharashtra",
+      "Mumbai tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Maharashtra",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "lonavala",
+    "name": "Lonavala",
+    "destinationId": "maharashtra",
+    "location": {
+      "lat": 18.7546,
+      "lng": 73.4062
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Lonavala",
+      "Maharashtra",
+      "Lonavala tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Maharashtra",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "mahabaleshwar",
+    "name": "Mahabaleshwar",
+    "destinationId": "maharashtra",
+    "location": {
+      "lat": 17.9237,
+      "lng": 73.6586
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Mahabaleshwar",
+      "Maharashtra",
+      "Mahabaleshwar tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Maharashtra",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "ajanta",
+    "name": "Ajanta",
+    "destinationId": "maharashtra",
+    "location": {
+      "lat": 20.5519,
+      "lng": 75.7033
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Ajanta",
+      "Maharashtra",
+      "Ajanta tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Maharashtra",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "bengaluru",
+    "name": "Bengaluru",
+    "destinationId": "karnataka",
+    "location": {
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Bengaluru",
+      "Karnataka",
+      "Bengaluru tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Karnataka",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi",
+    "destinationId": "karnataka",
+    "location": {
+      "lat": 15.335,
+      "lng": 76.46
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Hampi",
+      "Karnataka",
+      "Hampi tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Karnataka",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "coorg",
+    "name": "Coorg",
+    "destinationId": "karnataka",
+    "location": {
+      "lat": 12.3375,
+      "lng": 75.8069
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Coorg",
+      "Karnataka",
+      "Coorg tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Karnataka",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "mysuru",
+    "name": "Mysuru",
+    "destinationId": "karnataka",
+    "location": {
+      "lat": 12.2958,
+      "lng": 76.6394
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Mysuru",
+      "Karnataka",
+      "Mysuru tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Karnataka",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "destinationId": "tamil nadu",
+    "location": {
+      "lat": 13.0827,
+      "lng": 80.2707
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Chennai",
+      "Tamil Nadu",
+      "Chennai tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Tamil Nadu",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "ooty",
+    "name": "Ooty",
+    "destinationId": "tamil nadu",
+    "location": {
+      "lat": 11.4064,
+      "lng": 76.6932
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Ooty",
+      "Tamil Nadu",
+      "Ooty tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Tamil Nadu",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "kodaikanal",
+    "name": "Kodaikanal",
+    "destinationId": "tamil nadu",
+    "location": {
+      "lat": 10.2381,
+      "lng": 77.4892
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Kodaikanal",
+      "Tamil Nadu",
+      "Kodaikanal tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Tamil Nadu",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "destinationId": "tamil nadu",
+    "location": {
+      "lat": 9.9252,
+      "lng": 78.1198
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Madurai",
+      "Tamil Nadu",
+      "Madurai tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Tamil Nadu",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "destinationId": "gujarat",
+    "location": {
+      "lat": 23.0225,
+      "lng": 72.5714
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Ahmedabad",
+      "Gujarat",
+      "Ahmedabad tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Gujarat",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "gir",
+    "name": "Gir",
+    "destinationId": "gujarat",
+    "location": {
+      "lat": 21.124,
+      "lng": 70.8241
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Gir",
+      "Gujarat",
+      "Gir tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Gujarat",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "dwarka",
+    "name": "Dwarka",
+    "destinationId": "gujarat",
+    "location": {
+      "lat": 22.2442,
+      "lng": 68.9685
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Dwarka",
+      "Gujarat",
+      "Dwarka tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Gujarat",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
+    ]
+  },
+  {
+    "id": "kutch",
+    "name": "Kutch",
+    "destinationId": "gujarat",
+    "location": {
+      "lat": 23.7337,
+      "lng": 69.8597
+    },
+    "categories": [
+      "culture",
+      "nature"
+    ],
+    "experienceTypes": [
+      "sightseeing",
+      "photography"
+    ],
+    "heroScore": 90,
+    "uniquenessScore": 88,
+    "popularityScore": 90,
+    "energyLevel": "medium",
+    "recommendedPace": [
+      "balanced",
+      "relaxed"
+    ],
+    "averageVisitDurationHours": 6,
+    "isHeroExperience": true,
+    "primaryCategory": "tourism_hub",
+    "imageSearchTerms": [
+      "Kutch",
+      "Gujarat",
+      "Kutch tourism"
+    ],
+    "heroImage": "",
+    "imagePriority": "high",
+    "imageStrategy": "search",
+    "photographyScore": 90,
+    "crowdLevel": "medium",
+    "familyFriendly": true,
+    "coupleFriendly": true,
+    "seniorFriendly": true,
+    "idealVisitTime": [
+      "morning",
+      "evening"
+    ],
+    "weatherSensitivity": "low",
+    "recommendationReasons": [
+      "Top tourism hub in Gujarat",
+      "Excellent base for nearby attractions",
+      "Highly recommended destination"
     ]
   }
 ]

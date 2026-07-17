@@ -99,12 +99,15 @@ export default function TravelMap3D({
   showControls = true,
   collapsibleControls = false
 }) {
+  console.log("SELECTED PLACES:", selectedPlaces);
+  console.log("SELECTED COUNT:", selectedPlaces?.length);
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
 
   // Local state for toggle panel
   const [isExpanded, setIsExpanded] = useState(false);
+  const [mapReady, setMapReady] = useState(false);
 
   // Monitor frame rate for auto performance fallback
   useEffect(() => {
@@ -277,16 +280,24 @@ export default function TravelMap3D({
 
   // Re-draw route on geometry updates
   useEffect(() => {
-    if (mapRef.current && mapRef.current.isStyleLoaded()) {
-      drawRoute();
-    }
-  }, [routeGeometry, selectedTransport]);
+  if (!mapReady) return;
+
+  drawRoute();
+}, [mapReady, routeGeometry, selectedTransport]);
 
   // Draw start hub and stop markers on map
   useEffect(() => {
+    console.log("EFFECT FIRED");
+  console.log("MAP READY =", mapReady);
+  console.log("SELECTED COUNT =", selectedPlaces?.length);
+   
+  if (!mapReady) return;
+    console.log("MAP EFFECT RUNNING");
+    
     const map = mapRef.current;
+    
     if (!map) return;
-
+    
     markersRef.current.forEach(m => m.remove());
     markersRef.current = [];
 
@@ -323,9 +334,21 @@ export default function TravelMap3D({
 
     // 2. Add Selected Stops
     if (selectedPlaces && selectedPlaces.length > 0) {
+
+
       selectedPlaces.forEach((place, idx) => {
+         console.log("FULL PLACE OBJECT:", place);
         const coords = place.coords || [place.lat, place.lon];
-        if (coords && coords[0] && coords[1]) {
+
+        console.log("PLACE:", place.name);
+        console.log("COORDS:", coords);
+        console.log("PASSING CHECK:", !!(coords && coords[0] && coords[1]));
+
+
+        if (coords &&
+          coords.length === 2 &&
+          coords[0] != null &&
+          coords[1] != null) {
           const el = document.createElement('div');
           el.className = 'custom-3d-stop-marker';
           el.innerHTML = `<span style="font-size:9px; font-weight:900; font-family:sans-serif">${idx + 1}</span>`;
@@ -367,7 +390,7 @@ export default function TravelMap3D({
       });
     }
 
-  }, [startCoords, selectedPlaces, routeGeometry]);
+  }, [mapReady, startCoords, selectedPlaces, routeGeometry]);
 
   // Main initialization
   useEffect(() => {
@@ -379,69 +402,105 @@ export default function TravelMap3D({
       container: mapContainerRef.current,
       style: BASE_STYLES[activeStyle],
       center: initialCenter,
-      zoom: 7,
+      zoom: 9,
       pitch: pitch,
       bearing: bearing
     });
+    console.log("MAP CREATED");
 
     mapRef.current = map;
+    
 
     map.on('load', () => {
-      map.addSource('terrain-dem', {
-        type: 'raster-dem',
-        tiles: [
-          'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'
-        ],
-        encoding: 'terrarium',
-        tileSize: 256,
-        maxzoom: 15
-      });
+  console.log("LOAD START");
 
-      map.setTerrain({
-        source: 'terrain-dem',
-        exaggeration: exaggeration
-      });
+  try {
 
-      map.setFog({
-        range: [0.5, 12],
-        color: activeStyle === 'satellite' ? '#1e293b' : '#FAF7F2',
-        'horizon-blend': 0.45
-      });
+    console.log("ADDING DEM");
 
-      drawRoute();
+    map.addSource('terrain-dem', {
+      type: 'raster-dem',
+      tiles: [
+        'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'
+      ],
+      encoding: 'terrarium',
+      tileSize: 256,
+      maxzoom: 15
     });
 
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
-    };
-  }, []);
+    console.log("DEM ADDED");
+
+    map.setTerrain({
+      source: 'terrain-dem',
+      exaggeration: exaggeration
+    });
+
+    console.log("TERRAIN SET");
+
+    if (typeof map.setFog === "function") {
+  map.setFog({
+    range: [0.5, 12],
+    color: '#d8e8d2',
+    'horizon-blend': 0.6
+  });
+}
+
+    console.log("FOG SET");
+
+    setMapReady(true);
+
+    console.log("MAP READY TRUE");
+
+  } catch (err) {
+    console.error("MAP LOAD ERROR:", err);
+  }
+});
+    
+  return () => {
+  console.log("MAP CLEANUP");
+
+    if (mapRef.current) {
+      mapRef.current.remove();
+      mapRef.current = null;
+    }
+  };
+  },[]);
 
   const handleStyleChange = (styleKey) => {
-    if (onStateChange) {
-      onStateChange({ activeStyle: styleKey });
-    }
-  };
+  if (onStateChange) {
+    onStateChange(prev => ({
+      ...prev,
+      activeStyle: styleKey
+    }));
+  }
+};
 
   const handlePitchChange = (newVal) => {
-    if (onStateChange) {
-      onStateChange({ pitch: newVal });
-    }
-  };
+  if (onStateChange) {
+    onStateChange(prev => ({
+      ...prev,
+      pitch: newVal
+    }));
+  }
+};
 
   const handleBearingChange = (newVal) => {
-    if (onStateChange) {
-      onStateChange({ bearing: newVal });
-    }
-  };
+  if (onStateChange) {
+    onStateChange(prev => ({
+      ...prev,
+      bearing: newVal
+    }));
+  }
+};
 
   const handleExaggerationChange = (newVal) => {
-    if (onStateChange) {
-      onStateChange({ exaggeration: newVal });
-    }
-  };
+  if (onStateChange) {
+    onStateChange(prev => ({
+      ...prev,
+      exaggeration: newVal
+    }));
+  }
+};
 
   // Determine rendering layout of UI controls
   const renderControls = () => {

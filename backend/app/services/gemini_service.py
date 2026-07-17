@@ -15,8 +15,7 @@ class GeminiService:
             # Try VITE_GEMINI_API_KEY as fallback
             self.api_key = os.getenv("VITE_GEMINI_API_KEY")
         
-        self.url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={self.api_key}" if self.api_key else ""
-
+        self.url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={self.api_key}"
     async def generate_itinerary(
         self, 
         dest: str, 
@@ -96,7 +95,7 @@ class GeminiService:
             ctx.verify_mode = ssl.CERT_NONE
 
             logger.info("Sending request to Gemini API...")
-            with urllib.request.urlopen(req, context=ctx, timeout=12) as response:
+            with urllib.request.urlopen(req, context=ctx, timeout=45) as response:
                 resp_data = json.loads(response.read().decode("utf-8"))
                 
                 # Extract text from response

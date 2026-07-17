@@ -103,7 +103,7 @@ class RecommendationEngine:
     traveler_type="couple",
     crowd_preference="any",
     photography_interest=False):
-
+        print("DESTINATION RECEIVED:", destination)
         attractions = self.get_destination_attractions(destination)
 
         results = []

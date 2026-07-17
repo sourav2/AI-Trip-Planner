@@ -4,6 +4,7 @@ import ssl
 import urllib.request
 import urllib.parse
 import asyncio
+from functools import partial
 from openai import OpenAI
 from app.prompts.travel_prompts import SYSTEM_PROMPT_CHAT, SYSTEM_PROMPT_ITINERARY
 from app.utils.logger import get_logger
@@ -13,6 +14,7 @@ from app.services.geocoding_service import geocode_location
 from app.services.image_service import fetch_travel_image
 from app.services.attraction_service import discover_nearby_attractions, calculate_haversine_distance, get_parent_location_details
 from app.services.route_service import get_route
+from app.services.recommendation_engine import RecommendationEngine
 
 logger = get_logger("app.services.openai_service")
 
@@ -130,19 +132,24 @@ class OpenAIService:
         return suggestions[:5]
 
     async def get_nearby_attractions(self, dest: str, lat: float = None, lon: float = None, place_types: list = None) -> list:
+        logger.info(f"DESTINATION RECEIVED = {dest}")
+        logger.info(f"LAT = {lat}, LON = {lon}")
         """Discovers attractions forwarding to attractions service."""
         return await discover_nearby_attractions(dest, lat, lon, place_types)
 
     async def get_osrm_route(self, coords: list[list[float]], allow_international_transit: bool = False) -> dict:
         """Queries routing service."""
         return await get_route(coords, allow_international_transit)
-
+    
     async def generate_itinerary(self, preferences: dict) -> dict:
+        logger.info(f"DESTINATION RECEIVED: {preferences.get('destination')}")
         """
         Generates structured JSON itinerary based on user preferences.
         Calls OpenAI if key exists, otherwise falls back to a clean mock engine.
         """
         dest = preferences.get("destination", "Meghalaya")
+        
+
         start_location = preferences.get("start_location", "Guwahati")
         days = int(preferences.get("total_days", 4))
         travelers = int(preferences.get("travelers", 2))
@@ -150,30 +157,99 @@ class OpenAIService:
         comfort = preferences.get("comfort_level", "moderate")
         transport = preferences.get("transport_preference", "fastest")
         place_types = preferences.get("place_types", ["nature"])
-
+        engine = RecommendationEngine()
+        recommended_places = engine.get_top_attractions(
+            destination=dest.lower(),
+            travel_style=place_types[0] if place_types else "nature"
+        )
         logger.info(f"Generating itinerary for destination: '{dest}'")
 
         itinerary = None
-        real_places = await self.get_nearby_attractions(dest, place_types=place_types)
+        real_places = []
+
+        for rec in recommended_places[:3]:
+            logger.info(f"Discovering attractions around: {rec['name']}")
+
+            places = await self.get_nearby_attractions(
+                rec["name"],
+                place_types=place_types
+            )
+
+            real_places.extend(places)
+            
+            seen = set()
+            deduped = []
+
+            for p in real_places:
+                name = p.get("name", "").lower().strip()
+
+                if name not in seen:
+                    seen.add(name)
+                    deduped.append(p)
+
+            real_places = deduped
+
+        logger.info(
+            f"Collected {len(real_places)} attractions from recommendation hubs"
+        )
+
+        logger.info("===== DISCOVERY HUBS USED =====")
+        logger.info([r["name"] for r in recommended_places[:3]])
+        
+        logger.info("=====  DISCOVERED REAL PLACES =====")
+        logger.info([p["name"] for p in real_places])
+
+        recommendation_context = "\n".join([
+            f"- {p['name']}: {', '.join(p['reasons'])}"
+            for p in recommended_places
+        ])
+
         if self.client:
             try:
                 # Discovered real attractions to inject into OpenAI prompt context
+                logger.info("===== TOP RECOMMENDATIONS =====")
+                logger.info([p["name"] for p in recommended_places[:5]])
+
+                logger.info("===== GOOGLE/MAPS PLACES =====")
+                logger.info([p.get("name") for p in real_places])
+
+                logger.info("===== FILTERED REAL PLACES =====")
+                logger.info([p.get("name") for p in real_places])
+
                 places_context = "\n".join([f"- Name: {p['name']}. Summary: {p['summary']}" for p in real_places[:6]])
                 
                 user_content = f"""
-                Generate a {days}-day itinerary for {dest}.
+                Generate a {days}-day itinerary for {dest}
+
                 Number of travelers: {travelers}
-                Total Budget: {budget}
-                Comfort Level: {comfort}
-                Transport Preference: {transport}
-                Interests: {", ".join(place_types)}
-                
-                Here are the REAL-WORLD attractions in/near {dest} that you MUST include and cluster:
+                Budget: {budget}
+
+                Interests:
+                {", ".join(place_types)}
+
+                PRIORITIZED ATTRACTIONS
+                (selected by recommendation engine):
+
+                {recommendation_context}
+
+                OTHER DISCOVERED ATTRACTIONS:
+
                 {places_context}
-                
-                Do not invent other cities or geographic locations outside {dest} and its surroundings.
+
+                You MUST build the itinerary around the attractions listed
+                under PRIORITIZED ATTRACTIONS.
+
+                At least 80% of all sightseeing activities must come from
+                that list.
+
+                Only use OTHER DISCOVERED ATTRACTIONS if additional places
+                are required.
                 """
-                
+                logger.info("===== RECOMMENDATION ENGINE OUTPUT =====")
+                logger.info(recommendation_context)
+
+                logger.info("===== FINAL PROMPT =====")
+                logger.info(user_content)
                 response = self.client.chat.completions.create(
                     model="gpt-4o-mini",
                     messages=[
@@ -188,7 +264,8 @@ class OpenAIService:
                 logger.error(f"OpenAI generation failed: {e}. Falling back to Gemini.")
 
         allow_transit = preferences.get("allow_international_transit", False)
-
+        logger.info(f"ITINERARY AFTER OPENAI = {type(itinerary)}")
+        logger.info(f"ITINERARY CONTENT = {itinerary}")
         if not itinerary:
             gemini_key = os.getenv("GEMINI_API_KEY") or os.getenv("VITE_GEMINI_API_KEY")
             if gemini_key:
@@ -211,7 +288,11 @@ class OpenAIService:
             start_c = self.geocode_place(start_location)
             itinerary["start_coords"] = list(start_c) if start_c else [26.1445, 91.7362]
             dest_c = self.geocode_place(dest)
-            itinerary["dest_coords"] = list(dest_c) if dest_c else [25.5788, 91.8831]
+            if not dest_c:
+                logger.error(f"Failed to geocode destination: {dest}")
+                return itinerary
+
+            itinerary["dest_coords"] = list(dest_c)
             itinerary["allow_international_transit"] = allow_transit
             
             # Merge OpenAI returned attractions and all discovered real_places
@@ -225,12 +306,34 @@ class OpenAIService:
             merged_atts = list(openai_atts)
             
             # Add other real-world attractions not in regions
+            EXCLUDED_TYPES = {
+            "restaurant",
+            "restaurant/cafe",
+            "restaurant/café",
+            "cafe",
+            "café",
+            "food",
+            "hotel",
+            "resort",
+            "lodging",
+            "guest house",
+            "homestay",
+            "bar",
+            "bakery"
+            }
+
             for p in real_places:
+                place_type = p.get("type", "").lower().strip()
+
+                if place_type in EXCLUDED_TYPES:
+                    continue
+
                 p_name_clean = p["name"].lower().strip()
+
                 if p_name_clean not in seen_names and p_name_clean not in region_names_lower:
                     seen_names.add(p_name_clean)
                     merged_atts.append(p)
-            
+                
             logger.info(f"[PIPELINE LOG] Filtering: Merged total of {len(merged_atts)} attractions after deduplication and region filtering.")
             
             # 1. Resolve destination state
@@ -258,14 +361,15 @@ class OpenAIService:
             # 2. Populate and validate attractions concurrently
             async def process_single_attraction(att):
                 loop = asyncio.get_event_loop()
+                logger.info(f"[START] {att.get('name')}")
                 if "coords" not in att or not att["coords"]:
                     att_name = att.get("name", "")
-                    coords_res = await loop.run_in_executor(None, self.geocode_place, f"{att_name}, {dest}")
+                    coords_res = itinerary["dest_coords"]
                     if not coords_res:
                         logger.warning(f"Geocoding failed for attraction '{att_name}'. Skipping attraction.")
                         return None
                     att["coords"] = list(coords_res)
-                    att["image_url"] = await loop.run_in_executor(None, fetch_travel_image, att_name, state_dest)
+                    att["image_url"] = ""
                     dist = self.calculate_haversine_distance(
                         itinerary["dest_coords"][0], itinerary["dest_coords"][1],
                         att["coords"][0], att["coords"][1]
@@ -297,8 +401,34 @@ class OpenAIService:
                         itinerary["dest_coords"][0], itinerary["dest_coords"][1],
                         att["coords"][0], att["coords"][1]
                     )
+                    city_name = (
+                        att.get("city")
+                        or att.get("district")
+                        or att.get("region")
+                        or ""
+                    )
                     if "image_url" not in att or not att["image_url"]:
-                        att["image_url"] = await loop.run_in_executor(None, fetch_travel_image, att["name"], state_dest)
+
+                        city_name = (
+                            att.get("city")
+                            or att.get("district")
+                            or att.get("region")
+                            or ""
+                        )
+
+                        fetch_fn = partial(
+                            fetch_travel_image,
+                            query=att.get("name", ""),
+                            state=state_dest,
+                            category=att.get("type", ""),
+                            city=city_name,
+                            destination=dest,
+                        )
+
+                        att["image_url"] = await loop.run_in_executor(
+                            None,
+                            fetch_fn
+                        )
                     
                     # Estimate drive time
                     drive_time_mins = round(dist * 2.0)
@@ -325,13 +455,28 @@ class OpenAIService:
                         pass
                 
                 if is_valid:
+                    logger.info(f"[DONE] {att.get('name')}")
                     return att
                 else:
                     logger.warning(f"Discarding attraction '{att.get('name')}' outside of state '{state_dest}' (dist={dist} km)")
+                    logger.info(f"[DONE] {att.get('name')}")
                     return None
-
+            
+            if real_places:
+                logger.info(real_places[0])
+            else:
+                logger.warning("No real places discovered")
+            logger.info("START attraction processing")
             tasks = [process_single_attraction(att) for att in merged_atts]
-            results = await asyncio.gather(*tasks)
+            try:
+                results = await asyncio.wait_for(
+                    asyncio.gather(*tasks),
+                    timeout=30
+                )
+            except asyncio.TimeoutError:
+                logger.error("Attraction enrichment timed out after 30 seconds")
+                results = []
+            logger.info("FINISHED attraction processing")
             validated_atts = [r for r in results if r is not None]
 
             # If fewer than 12 validated, backfill with verified real_places
@@ -359,10 +504,23 @@ class OpenAIService:
                             drive_time_str = f"{h_part} hr drive" if m_part == 0 else f"{h_part} hr {m_part} mins drive"
                         rp["drive_time"] = drive_time_str
 
-                        if "image_url" not in rp or not rp["image_url"]:
-                            rp["image_url"] = await asyncio.get_event_loop().run_in_executor(
-                                None, fetch_travel_image, rp["name"], state_dest
+                        city_name = (
+                            rp.get("city")
+                            or rp.get("district")
+                            or rp.get("region")
+                            or ""
+                        )
+
+                        rp["image_url"] = await asyncio.get_event_loop().run_in_executor(
+                            None,
+                            lambda: fetch_travel_image(
+                                query=rp.get("name", ""),
+                                state=state_dest,
+                                category=rp.get("type", ""),
+                                city=city_name,
+                                destination=dest,
                             )
+                        )
                         validated_atts.append(rp)
 
             final_atts = validated_atts[:20]
@@ -376,11 +534,11 @@ class OpenAIService:
                 coords_res = await loop.run_in_executor(None, self.geocode_place, f"{reg_name}, {dest}")
                 if not coords_res:
                     logger.warning(f"Geocoding failed for region '{reg_name}'. Skipping region.")
+                    logger.info(f"[DONE] {reg_name}")
                     return None
                 reg_coords = list(coords_res)
                 region["region_coords"] = reg_coords
-                region["image_url"] = await loop.run_in_executor(None, fetch_travel_image, reg_name or dest, state_dest)
-                
+                region["image_url"] = ""
                 dist = self.calculate_haversine_distance(
                     itinerary["dest_coords"][0], itinerary["dest_coords"][1],
                     reg_coords[0], reg_coords[1]
@@ -398,9 +556,11 @@ class OpenAIService:
                         pass
                 
                 if is_valid:
+                    logger.info(f"[DONE] {reg_name}")
                     return region
                 else:
                     logger.warning(f"Discarding region '{reg_name}' outside of state '{state_dest}' (dist={dist} km)")
+                    logger.info(f"[DONE] {reg_name}")
                     return None
 
             region_tasks = [process_single_region(r) for r in itinerary.get("regions", [])]
@@ -454,10 +614,55 @@ class OpenAIService:
         dest_coords = itinerary.get("dest_coords")
         state_dest = ""
         if dest_coords and len(dest_coords) >= 2:
+            # Resolve destination state without reverse geocoding if possible
+            dest_low = dest.lower()
+
+        KNOWN_STATES = {
+            "jaipur": "Rajasthan",
+            "udaipur": "Rajasthan",
+            "jodhpur": "Rajasthan",
+            "jaisalmer": "Rajasthan",
+            "pushkar": "Rajasthan",
+            "ajmer": "Rajasthan",
+            "bikaner": "Rajasthan",
+            "chittorgarh": "Rajasthan",
+            "mount abu": "Rajasthan",
+            "ranthambore": "Rajasthan",
+
+            "munnar": "Kerala",
+            "kochi": "Kerala",
+            "alleppey": "Kerala",
+            "wayanad": "Kerala",
+
+            "shillong": "Meghalaya",
+            "cherrapunji": "Meghalaya",
+            "sohra": "Meghalaya",
+            "dawki": "Meghalaya",
+
+            "gangtok": "Sikkim",
+            "pelling": "Sikkim",
+            "lachung": "Sikkim",
+
+            "manali": "Himachal Pradesh",
+            "shimla": "Himachal Pradesh",
+        }
+
+        state_dest = None
+
+        for city, state in KNOWN_STATES.items():
+            if city in dest_low:
+                state_dest = state
+                logger.info(f"Using local state mapping: {dest} -> {state}")
+                break
+
+        if state_dest is None:
             try:
-                _, state_dest = await get_parent_location_details(dest_coords[0], dest_coords[1])
+                _, state_dest = await get_parent_location_details(
+                    dest_coords[0],
+                    dest_coords[1]
+                )
             except Exception:
-                pass
+                state_dest = None
         if not state_dest:
             dest_low = dest.lower()
             if "nagaland" in dest_low or "kohima" in dest_low:
@@ -482,6 +687,10 @@ class OpenAIService:
         segments stops into regions, and builds final route geometry and budget details.
         """
         dest = preferences.get("destination", "Meghalaya")
+        logger.info("=" * 60)
+        logger.info(f"Destination from preferences: {dest}")
+        logger.info(f"Full preferences: {preferences}")
+        logger.info("=" * 60)
         start_location = preferences.get("start_location", "Guwahati")
         days = int(preferences.get("total_days", 4))
         travelers = int(preferences.get("travelers", 2))
@@ -493,8 +702,14 @@ class OpenAIService:
         start_c = self.geocode_place(start_location)
         start_coords = list(start_c) if start_c else [26.1445, 91.7362]
         dest_c = self.geocode_place(dest)
-        dest_coords = list(dest_c) if dest_c else [25.5788, 91.8831]
-        
+        print("DEST =", dest)
+        print("DEST_C =", dest_c)
+        if not dest_c:
+            logger.error(
+                f"Failed to geocode destination {dest}"
+            )
+            return []
+        dest_coords = list(dest_c)
         place_types = preferences.get("place_types", [])
         if not selected_places:
             selected_places = await self.get_nearby_attractions(dest, dest_coords[0], dest_coords[1], place_types=place_types)
@@ -531,6 +746,10 @@ class OpenAIService:
         route_dist = route_info["distance"]
 
         # Fetch remaining attractions as suggestions (exclude selected ones)
+        logger.info("=" * 80)
+        logger.info(f"FINAL DEST = {dest}")
+        logger.info(f"PREFERENCES DEST = {preferences.get('destination')}")
+        logger.info("=" * 80)
         all_nearby = await self.get_nearby_attractions(dest, dest_coords[0], dest_coords[1], place_types=place_types)
         selected_names = {p["name"].lower().strip() for p in ordered_places}
         remaining_nearby = [att for att in all_nearby if att["name"].lower().strip() not in selected_names]
@@ -658,7 +877,13 @@ class OpenAIService:
                 "region_name": reg_name,
                 "region_coords": [reg_lat, reg_lon],
                 "region_image_query": f"{dest} tourism scenery",
-                "image_url": fetch_travel_image(reg_name),
+                "image_url": fetch_travel_image(
+                        query=reg_name,
+                        state=state_dest,
+                        category="region",
+                        city=reg_name,
+                        destination=dest,
+                    ),
                 "quick_summary": f"Discover the rich cultural sights and landmarks of {reg_name}.",
                 "transport": "Local rental cab" if comfort != "budget" else "Shared auto/bus",
                 "hotel_type": "Boutique hotel" if comfort == "moderate" else ("Luxury villa" if comfort == "luxury" else "Homestay hostel"),
@@ -718,7 +943,13 @@ class OpenAIService:
             elif "himachal" in dest_low or "shimla" in dest_low or "manali" in dest_low:
                 state_dest = "Himachal Pradesh"
 
-        dest_img_url = fetch_travel_image(dest, state_dest)
+        dest_img_url = fetch_travel_image(
+            query=dest,
+            state=state_dest,
+            category="destination",
+            city=dest,
+            destination=dest,
+        )
         
         return {
             "travelers": travelers,
@@ -749,7 +980,12 @@ class OpenAIService:
         start_c = self.geocode_place(start_location)
         start_coords = list(start_c) if start_c else [26.1445, 91.7362]
         dest_c = self.geocode_place(dest)
-        dest_coords = list(dest_c) if dest_c else [25.5788, 91.8831]
+
+        if not dest_c:
+            logger.error(f"Failed to geocode destination: {dest}")
+            return {}
+
+        dest_coords = list(dest_c)
         
         # Load nearby attractions using Nominatim or Google Places
         nearby_attractions = await self.get_nearby_attractions(dest, dest_coords[0], dest_coords[1], place_types=place_types)
@@ -1267,21 +1503,25 @@ class OpenAIService:
         return options_final
 
     async def get_place_details(self, place: str) -> dict:
+        logger.info("STEP 1")
         """
         Dynamically fetches coordinates, images, galleries, nearby attractions,
         and POI travel information for a specific place/stop to build a mini-guide.
         """
-        lat, lon = self.geocode_place(place)
-        
+        coords = self.geocode_place(place)
+        logger.info(f"PLACE NAME = {place}")
+        logger.info(f"GEOCODE RESULT = {coords}")
+        logger.info("STEP 2")
+        if coords:
+            lat, lon = coords
+        else:
+            lat, lon = None, None
+       
         hero_image = fetch_travel_image(place)
         
-        gallery = [
-            fetch_travel_image(f"{place} viewpoint"),
-            fetch_travel_image(f"{place} nature landscape"),
-            fetch_travel_image(f"{place} tourism landmark"),
-            fetch_travel_image(f"{place} local streets scenery")
-        ]
+        gallery = [hero_image]
         gallery = list(dict.fromkeys([g for g in gallery if g]))
+        logger.info("STEP 3")
         if len(gallery) < 3:
             gallery.extend([
                 "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&auto=format&fit=crop",
@@ -1289,7 +1529,12 @@ class OpenAIService:
             ])
             gallery = list(dict.fromkeys(gallery))[:4]
             
-        all_attractions = await self.get_nearby_attractions(place, lat, lon)
+        if lat is None or lon is None:
+            all_attractions = []
+        else:
+            logger.info("STEP 4")
+            all_attractions = await self.get_nearby_attractions(place, lat, lon)
+            logger.info("STEP 5")
         
         attractions = []
         food = []
@@ -1336,10 +1581,11 @@ class OpenAIService:
                 break
         if not related:
             related = [att["name"] for att in all_attractions if att["name"].lower().strip() != dest_clean][:3]
-            
+        logger.info("GET_PLACE_DETAILS FINISHED") 
+        logger.info("STEP 6")  
         return {
             "name": place,
-            "coords": [lat, lon],
+            "coords": [lat, lon] if lat is not None else None,
             "hero_image": hero_image,
             "gallery": gallery,
             "overview": overview,

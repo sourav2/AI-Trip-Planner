@@ -25,11 +25,17 @@ export default function PlaceDetailsPage({
       setError(null);
       try {
         const data = await travelApi.fetchPlaceDetails(placeName);
+      
+        console.log("PLACE DETAILS RESPONSE:", data);
+        
         setDetails(data);
-      } catch (err) {
+        
+      } 
+      catch (err) {
         console.error("Failed to load place details:", err);
         setError("Could not load travel guide details. Please check connection.");
-      } finally {
+      } 
+      finally {
         setLoading(false);
       }
     }
@@ -51,11 +57,15 @@ export default function PlaceDetailsPage({
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(mapRef.current);
     } else {
-      mapRef.current.setView(details.coords, 12);
+      mapRef.current.setView(details.coords || [20.5937, 78.9629],
+    12);
     }
 
     // Clean up markers layer group
     const layerGroup = L.layerGroup().addTo(mapRef.current);
+    if (!details.coords || details.coords.length < 2) {
+      return;
+    }
 
     // Add main place marker (Blue)
     const placeIcon = L.divIcon({
@@ -64,9 +74,12 @@ export default function PlaceDetailsPage({
       iconSize: [32, 32],
       iconAnchor: [16, 16]
     });
-    L.marker(details.coords, { icon: placeIcon })
-      .bindPopup(`<strong>${details.name}</strong><br/>Central Hub`)
-      .addTo(layerGroup);
+    if (details.coords) {
+  L.marker(details.coords, { icon: placeIcon })
+    .bindPopup(`<strong>${details.name}</strong><br/>Central Hub`)
+    .addTo(layerGroup);
+}
+      
 
     // Add nearby attractions markers (Red)
     const attrIcon = L.divIcon({
@@ -75,7 +88,8 @@ export default function PlaceDetailsPage({
       iconSize: [28, 28],
       iconAnchor: [14, 14]
     });
-
+    if (!details.coords || details.coords.length < 2) {
+    
     details.attractions?.forEach(att => {
       // Generate nearby coordinate offset
       const hash = att.name.charCodeAt(0) + att.name.charCodeAt(att.name.length - 1);
@@ -87,7 +101,7 @@ export default function PlaceDetailsPage({
         .bindPopup(`<strong>${att.name}</strong><br/>${att.type}`)
         .addTo(layerGroup);
     });
-
+  }
     return () => {
       if (mapRef.current) {
         mapRef.current.removeLayer(layerGroup);
@@ -130,9 +144,9 @@ export default function PlaceDetailsPage({
   const isAdded = selectedPlaces.some(p => p.name?.toLowerCase().trim() === details.name?.toLowerCase().trim());
   const formattedPlace = {
     name: details.name,
-    coords: details.coords,
-    lat: details.coords[0],
-    lon: details.coords[1],
+    coords: details.coords || [0, 0],
+    lat: details.coords?.[0] || 0,
+    lon: details.coords?.[1] || 0,
     summary: details.overview,
     visit_duration: "1 Day",
     local_cost: 0
@@ -173,7 +187,7 @@ export default function PlaceDetailsPage({
       {/* Hero Section */}
       <div className="relative h-[280px] sm:h-[350px] rounded-2xl overflow-hidden shadow-premium">
         <img
-          src={details.gallery[activeImageIdx] || details.hero_image}
+          src={details.gallery?.[activeImageIdx] || details.hero_image}
           alt={details.name}
           className="w-full h-full object-cover"
         />
@@ -225,7 +239,7 @@ export default function PlaceDetailsPage({
             <div className="rounded-2xl border border-travel-borders bg-white p-5 shadow-xs">
               <h3 className="text-card-heading text-travel-text-primary mb-3">Traveler Tips</h3>
               <ul className="space-y-2">
-                {details.tips.map((tip, idx) => (
+                {(details.tips || []).map((tip, idx) => (
                   <li key={idx} className="flex gap-2 items-start text-body-custom text-travel-text-secondary">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A] mt-1.5 shrink-0" />
                     <span>{tip}</span>
@@ -240,7 +254,7 @@ export default function PlaceDetailsPage({
           <div className="rounded-2xl border border-travel-borders bg-white p-5 shadow-xs space-y-4">
             <h3 className="text-section-heading text-travel-text-primary font-semibold">Must-Visit Points of Interest</h3>
             <div className="space-y-4">
-              {details.attractions.map((att, idx) => (
+              {(details.attractions || []).map((att, idx) => (
                 <div key={idx} className="flex items-start gap-4 border-b border-travel-borders pb-4 last:border-b-0 last:pb-0">
                   {att.image_url && (
                     <img
@@ -285,7 +299,7 @@ export default function PlaceDetailsPage({
           <div className="rounded-2xl border border-travel-borders bg-white p-5 shadow-xs">
             <h3 className="text-card-heading text-travel-text-primary mb-3">Scenic Gallery</h3>
             <div className="grid grid-cols-4 gap-2.5">
-              {details.gallery.map((img, idx) => (
+              {(details.gallery || []).map((img, idx) => (
                 <div
                   key={idx}
                   onClick={() => setActiveImageIdx(idx)}
@@ -308,7 +322,7 @@ export default function PlaceDetailsPage({
                 <Utensils className="h-3 w-3 text-travel-text-primary" /> Food Stops
               </h4>
               <ul className="space-y-2">
-                {details.food_recommendations.map((foodName, idx) => (
+                {(details.food_recommendations || []).map((foodName, idx) => (
                   <li key={idx} className="text-body-custom text-travel-text-secondary leading-snug">
                     🍲 {foodName}
                   </li>
@@ -321,7 +335,7 @@ export default function PlaceDetailsPage({
                 <Sparkles className="h-3.5 w-3.5 text-[#16A34A]" /> Top Activities
               </h4>
               <ul className="space-y-2">
-                {details.activities.map((act, idx) => (
+                {(details.activities || []).map((act, idx) => (
                   <li key={idx} className="text-body-custom text-travel-text-secondary leading-snug">
                     ⚡ {act}
                   </li>

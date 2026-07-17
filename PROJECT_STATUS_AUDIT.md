@@ -122,3 +122,28 @@ The backend is written in **FastAPI** with startup pre-flight validation.
 
 ### **Entire Product: 90%**
 **Reasoning:** The application is highly complete, functional, and performs exceptionally well. The primary user loop is fully operational. The final 10% requires securing production API keys, implementing the backend PDF print service, and finishing advanced cartographic texture filters.
+
+## Current Frontend Issues (June 2026)
+
+### P0 - Critical
+
+#### Tab Switching State Loss
+- Route disappears after switching tabs.
+- Selected attractions disappear after switching tabs.
+- Likely React state persistence / component remount issue.
+- Investigate itinerary state storage and tab lifecycle.
+
+### P1 - High Priority
+
+#### Incorrect Attraction Images
+- Some attractions show unrelated images.
+- Example: Seven Sisters Falls displays a lion image.
+- Causes loss of user trust.
+- Need stricter attraction-image matching.
+
+### P2 - Improvement
+
+#### Image Relevance Scoring
+- Some images are generic placeholders.
+- Improve attraction-name-based image search.
+- Improve fallback image selection logic.

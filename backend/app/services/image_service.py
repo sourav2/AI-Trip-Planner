@@ -22,59 +22,108 @@ UNSPLASH_BLOCKED_LOCK = threading.Lock()
 
 CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "image_cache.json")
 
+
 ATTRACTION_QUERY_MAPPINGS = {
+    # ---------- Meghalaya ----------
     "nongriat": "Living Root Bridge Nongriat",
-    "dawki": "Umngot River Dawki Crystal River",
+    "umngot": "Umngot River Dawki crystal clear river boating",
+    "dawki": "Umngot River Dawki crystal clear river boating",
     "krang suri": "Krang Suri Waterfall Jowai",
-    "pushkar": "Pushkar Lake Rajasthan",
     "laitlum": "Laitlum Canyon Shillong",
     "wei sawdong": "Wei Sawdong Waterfall Cherrapunji",
     "mawsmai": "Mawsmai Cave Cherrapunji",
     "shnongpdeng": "Umngot River Shnongpdeng camping",
-    "nongjrong": "Nongjrong valley sunrise clouds",
+    "nongjrong": "Nongjrong Viewpoint Meghalaya",
     "umiam": "Umiam Lake Shillong",
     "mawlynnong": "Mawlynnong cleanest village",
     "phe phe": "Phe Phe Falls Meghalaya",
     "elephant falls": "Elephant Falls Shillong",
-    "seven sisters": "Seven Sisters Falls Cherrapunji",
-    "balpakram": "Balpakram National Park canyon",
-    "mawphlang": "Mawphlang Sacred Forest grove",
+    "seven sisters": "Seven Sisters Falls Meghalaya",
+    "balpakram": "Balpakram National Park",
+    "mawphlang": "Mawphlang Sacred Forest",
     "don bosco": "Don Bosco Museum Shillong",
-    "shillong peak": "Shillong Peak heights",
-    "munnar": "Munnar tea gardens hills",
+    "shillong peak": "Shillong Peak",
+
+    # ---------- Rajasthan ----------
+    "tanot mata": "Tanot Mata Temple Rajasthan border shrine",
+    "hawa mahal": "Hawa Mahal Jaipur pink sandstone palace facade",
+    "city palace": "City Palace Jaipur Rajasthan royal palace",
+    "city palace udaipur": "City Palace Udaipur lake palace Rajasthan",
+    "nahargarh": "Nahargarh Fort Jaipur hill fort",
+    "nahargarh fort": "Nahargarh Fort Jaipur hill fort",
+    "mehrangarh": "Mehrangarh Fort Jodhpur blue city fort",
+    "mehrangarh fort": "Mehrangarh Fort Jodhpur blue city fort",
+    "jaisalmer fort": "Jaisalmer Fort golden fort Rajasthan",
+    "chittorgarh": "Chittorgarh Fort Rajasthan UNESCO fort",
+    "birla mandir": "Birla Mandir Jaipur white marble temple",
+    "jantar mantar": "Jantar Mantar Jaipur astronomical observatory",
+    "jal mahal": "Jal Mahal Jaipur palace in lake",
+    "sheesh mahal": "Sheesh Mahal Amber Fort Jaipur mirror palace",
+    "amber": "Amber Fort Jaipur Rajasthan",
+    "amer": "Amber Fort Jaipur Rajasthan",
+    "dilwara": "Dilwara Jain Temples Mount Abu marble carvings",
+    "pushkar": "Pushkar Lake Rajasthan ghats",
+    "lake pichola": "Lake Pichola Udaipur boat lake",
+    "ranthambore": "Ranthambore National Park tiger safari",
+    "sam sand dunes": "Sam Sand Dunes Jaisalmer camel desert",
+    "jaisalmer sand dunes": "Sam Sand Dunes Jaisalmer camel desert",
+
+    # ---------- Kerala ----------
+    "munnar": "Munnar tea gardens",
     "alleppey": "Alleppey backwaters houseboat",
     "varkala": "Varkala cliff beach",
-    "wayanad": "Wayanad hills nature forest",
-    "periyar": "Periyar national park lake",
+    "wayanad": "Wayanad hills forest",
+    "periyar": "Periyar National Park",
     "fort kochi": "Fort Kochi Chinese fishing nets",
-    "amber": "Amber Fort Jaipur palace",
-    "hawa mahal": "Hawa Mahal Jaipur palace windows",
-    "lake pichola": "Lake Pichola Udaipur boating",
-    "city palace udaipur": "City Palace Udaipur Rajasthan",
-    "mehrangarh": "Mehrangarh Fort Jodhpur",
-    "jaisalmer sand dunes": "Sam sand dunes Jaisalmer desert",
-    "pushkar holy lake": "Pushkar Lake holy town",
-    "ranthambore": "Ranthambore tiger safari national park",
-    "dilwara": "Dilwara Temples Mount Abu",
-    "jakhoo": "Jakhoo Temple Shimla hill",
-    "kufri": "Kufri snow hills Shimla",
-    "viceregal": "Viceregal Lodge Shimla palace",
-    "solang": "Solang Valley Manali snow adventure",
-    "rohtang": "Rohtang Pass Manali mountain pass snow",
-    "hadimba": "Hadimba Temple Manali forest",
-    "dzukou": "Dzukou Valley Nagaland green hills",
-    "kisama": "Kisama Heritage Village Nagaland Hornbill",
-    "khonoma": "Khonoma green village Nagaland",
-    "tsomgo": "Tsomgo Lake Sikkim mountain lake",
-    "nathula": "Nathula Pass Sikkim snow mountain border",
-    "gurudongmar": "Gurudongmar Lake Sikkim high altitude",
-    "rumtek": "Rumtek Monastery Gangtok",
-    "yumthang": "Yumthang Valley of Flowers Sikkim",
-    "pelling": "Pelling skywalk Kanchenjunga view",
-    "goechala": "Goechala trek Kanchenjunga mountain",
-    "teesta": "Teesta River rafting Sikkim"
-}
 
+    # ---------- Himachal ----------
+    "jakhoo": "Jakhoo Temple Shimla",
+    "kufri": "Kufri Shimla",
+    "viceregal": "Viceregal Lodge Shimla",
+    "solang": "Solang Valley Manali",
+    "rohtang": "Rohtang Pass Manali",
+    "hadimba": "Hadimba Temple Manali",
+
+    # ---------- Sikkim ----------
+    "tsomgo": "Tsomgo Lake Sikkim",
+    "nathula": "Nathula Pass",
+    "gurudongmar": "Gurudongmar Lake",
+    "rumtek": "Rumtek Monastery",
+    "yumthang": "Yumthang Valley",
+    "pelling": "Pelling Skywalk",
+    "goechala": "Goechala Trek",
+    "teesta": "Teesta River Sikkim",
+
+    # ---------- Nagaland ----------
+    "dzukou": "Dzukou Valley",
+    "kisama": "Kisama Heritage Village",
+    "khonoma": "Khonoma Village",
+
+    # ---------- India Famous ----------
+    "taj mahal": "Taj Mahal Agra",
+    "agra fort": "Agra Fort",
+    "fatehpur sikri": "Fatehpur Sikri",
+    "qutub": "Qutub Minar Delhi",
+    "red fort": "Red Fort Delhi",
+    "india gate": "India Gate Delhi",
+    "lotus temple": "Lotus Temple Delhi",
+    "gateway of india": "Gateway of India Mumbai",
+    "marine drive": "Marine Drive Mumbai",
+    "victoria memorial": "Victoria Memorial Kolkata",
+    "howrah bridge": "Howrah Bridge Kolkata",
+    "konark": "Konark Sun Temple",
+    "jagannath": "Jagannath Temple Puri",
+    "charminar": "Charminar Hyderabad",
+    "golconda": "Golconda Fort Hyderabad",
+    "mysore palace": "Mysore Palace",
+    "hampi": "Hampi ruins",
+    "brihadeeswara": "Brihadeeswara Temple",
+    "meenakshi": "Meenakshi Temple Madurai",
+    "golden temple": "Golden Temple Amritsar",
+    "ajanta": "Ajanta Caves",
+    "ellora": "Ellora Caves",
+    "sun temple": "Konark Sun Temple"
+}
 def sanitize_image_url(url: str) -> str:
     if not url:
         return ""
@@ -175,6 +224,7 @@ def validate_photo(photo_data: dict, query: str, category: str = "") -> bool:
         tags_list.extend([t.get("title", "") for t in photo_data.get("tags", []) if t.get("title")])
     tags_str = " ".join(tags_list).lower()
     full_text = f"{desc} {alt} {tags_str}"
+    logger.info(f"PHOTO CHECK | query={query} | category={category} | text={full_text[:300]}")
     
     # Reject interior/stock/office images unless searching for room/hotel/palace
     interior_keywords = {
@@ -191,7 +241,9 @@ def validate_photo(photo_data: dict, query: str, category: str = "") -> bool:
     
     if not indoor_search:
         if any(w in full_text for w in interior_keywords):
-            logger.warning(f"Photo rejected: Contains interior/stock/indoor keywords for outdoor query '{query}'")
+            logger.warning(
+    f"PHOTO REJECTED INTERIOR | query={query} | category={category} | text={full_text[:300]}"
+)
             return False
         
         # Strict architecture rejection for nature spots
@@ -208,17 +260,83 @@ def validate_photo(photo_data: dict, query: str, category: str = "") -> bool:
             
     # Category-specific strict validation checks
     cat_lower = (category or "").lower()
-    
+    NEGATIVE_TAGS = {
+        "fort": [
+            "beach", "ocean", "sea", "snow", "ice",
+            "hotel", "bedroom", "room", "food",
+            "restaurant", "kitchen"
+        ],
+
+        "palace": [
+            "beach", "ocean", "snow",
+            "food", "restaurant", "bedroom"
+        ],
+
+        "temple": [
+            "beach", "ocean", "snow",
+            "food", "restaurant", "hotel"
+        ],
+
+        "lake": [
+            "bedroom", "hotel", "food",
+            "restaurant", "kitchen"
+        ],
+
+        "waterfall": [
+            "bedroom", "hotel", "restaurant",
+            "office", "kitchen"
+        ],
+
+        "river": [
+            "bedroom", "hotel", "restaurant"
+        ],
+
+        "bridge": [
+            "beach", "hotel", "bedroom"
+        ]
+    }
+    for key, bad_words in NEGATIVE_TAGS.items():
+
+        if key in cat_lower:
+
+            for bad in bad_words:
+
+                if bad in full_text:
+
+                    logger.warning(
+                        f"PHOTO REJECTED ({category}) because '{bad}' was detected."
+                    )
+
+                    return False
+
+            break
+
     if "waterfall" in cat_lower or "falls" in cat_lower or "fall" in cat_lower or "cascade" in query.lower():
-        waterfall_keywords = {"waterfall", "falls", "fall", "cascade", "stream", "flow", "water", "nature", "landscape", "canyon"}
+        waterfall_keywords = {"waterfall", "falls", "fall", "cascade", "stream", "flow", "water" }
         if not any(w in full_text for w in waterfall_keywords):
-            logger.warning(f"Photo rejected for waterfall category: no waterfall keywords for query '{query}'")
+            logger.warning(
+    f"PHOTO REJECTED WATERFALL | query={query} | category={category} | text={full_text[:300]}"
+)
             return False
             
-    elif "river" in cat_lower or "lake" in cat_lower or "pool" in cat_lower or "stream" in cat_lower or "boating" in cat_lower or "boat" in cat_lower:
-        water_keywords = {"river", "lake", "water", "boating", "boat", "stream", "pool", "kayak", "canoe", "rafting", "sea", "ocean", "nature", "landscape"}
+    elif (
+    "river" in cat_lower
+    or "lake" in cat_lower
+    or "pool" in cat_lower
+    or "stream" in cat_lower
+    or "boating" in cat_lower
+    or "boat" in cat_lower
+):
+        water_keywords = {
+        "river", "lake", "water", "boating", "boat",
+        "stream", "pool", "kayak", "canoe", "rafting",
+        "sea", "ocean", "nature", "landscape"
+    }
+
         if not any(w in full_text for w in water_keywords):
-            logger.warning(f"Photo rejected for water category: no water keywords for query '{query}'")
+            logger.warning(
+            f"PHOTO REJECTED RIVER | query={query} | category={category} | text={full_text[:300]}"
+            )
             return False
             
     elif "cave" in cat_lower or "cavern" in cat_lower or "caving" in cat_lower or "krem" in query.lower():
@@ -378,6 +496,12 @@ def fetch_travel_image(query: str, state: str = "", category: str = "", city: st
     return img_url
 
 def _fetch_travel_image_raw(query: str, state: str = "", category: str = "", city: str = "", destination: str = "") -> str:
+    logger.info("=" * 80)
+    logger.info(f"IMAGE ORIGINAL QUERY : {query}")
+    logger.info(f"STATE               : {state}")
+    logger.info(f"CATEGORY            : {category}")
+    logger.info(f"CITY                : {city}")
+    logger.info(f"DESTINATION         : {destination}")
     global USED_IMAGES
     q_clean = query.strip()
     if not q_clean:
@@ -432,38 +556,347 @@ def _fetch_travel_image_raw(query: str, state: str = "", category: str = "", cit
         "national park": "national park reserve sanctuary"
     }
 
+    LANDMARK_IMAGE_QUERY = {
+
+    # ======================
+    # Rajasthan
+    # ======================
+
+    "hawa mahal": "Hawa Mahal Jaipur Rajasthan  pink sandstone palace",
+    "amber fort": "Amber Fort Jaipur",
+    "amer fort": "Amber Fort Jaipur Rajasthan UNESCO fort",
+    "nahargarh fort": "Nahargarh Fort Jaipur Rajasthan fort",
+    "jaigarh fort": "Jaigarh Fort Jaipur Rajasthan fort",
+    "jal mahal": "Jal Mahal Jaipur lake palace",
+    "city palace jaipur": "City Palace Jaipur",
+    "city palace udaipur": "City Palace Udaipur",
+    "mehrangarh fort": "Mehrangarh Fort Jodhpur",
+    "umaid bhawan": "Umaid Bhawan Palace Jodhpur",
+    "jaisalmer fort": "Jaisalmer Fort Rajasthan",
+    "patwon ki haveli": "Patwon Ki Haveli Jaisalmer",
+    "gadisar lake": "Gadisar Lake Jaisalmer",
+    "sam sand dunes": "Sam Sand Dunes Jaisalmer camel desert",
+    "thar desert": "Thar Desert Rajasthan dunes",
+    "jantar mantar": "Jantar Mantar Jaipur",
+    "chittorgarh fort": "Chittorgarh Fort Rajasthan UNESCO",
+    "kumbhalgarh fort":"Kumbhalgarh Fort Rajasthan",
+    "dilwara temple":"Dilwara Jain Temple Mount Abu marble",
+    "dilwara temples": "Dilwara Jain Temple Mount Abu marble",
+    "mount abu": "Mount Abu Rajasthan",
+    "nakki lake": "Nakki Lake Mount Abu",
+    "pushkar lake": "Pushkar Lake Rajasthan",
+    "brahma temple": "Brahma Temple Pushkar",
+    
+    "ranthambore": "Ranthambore National Park",
+    "keoladeo": "Keoladeo National Park Bharatpur",
+
+    # ======================
+    # Meghalaya
+    # ======================
+
+    "dawki": "Dawki Umngot River Meghalaya",
+    "umngot": "Umngot River Dawki",
+    "shnongpdeng": "Shnongpdeng Meghalaya",
+    "krang suri": "Krang Suri Waterfall Meghalaya",
+    "nohkalikai": "Nohkalikai Falls Meghalaya",
+    "seven sisters": "Seven Sisters Waterfall Meghalaya",
+    "elephant falls": "Elephant Falls Shillong",
+    "mawlynnong": "Mawlynnong Village Meghalaya",
+    "living root bridge": "Living Root Bridge Meghalaya",
+    "double decker": "Double Decker Living Root Bridge",
+    "wei sawdong": "Wei Sawdong Waterfall Meghalaya",
+    "laitlum": "Laitlum Canyon Meghalaya",
+    "mawsmai": "Mawsmai Cave Meghalaya",
+    "arwah": "Arwah Cave Meghalaya",
+    "umiam": "Umiam Lake Shillong",
+    "ward lake": "Ward's Lake Shillong",
+    "don bosco": "Don Bosco Museum Shillong",
+    "shillong peak": "Shillong Peak",
+
+    # ======================
+    # Kerala
+    # ======================
+
+    "munnar": "Munnar Tea Gardens Kerala",
+    "alleppey": "Alleppey Backwaters Kerala",
+    "alappuzha": "Alappuzha Houseboat Kerala",
+    "varkala": "Varkala Cliff Kerala",
+    "kovalam": "Kovalam Beach Kerala",
+    "athirapally": "Athirapally Waterfall Kerala",
+    "thekkady": "Periyar National Park Kerala",
+    "periyar": "Periyar Tiger Reserve",
+    "wayanad": "Wayanad Kerala",
+    "edakkal": "Edakkal Caves Kerala",
+    "bekal": "Bekal Fort Kerala",
+    "fort kochi": "Fort Kochi Kerala",
+
+    # ======================
+    # Goa
+    # ======================
+
+    "baga": "Baga Beach Goa",
+    "calangute": "Calangute Beach Goa",
+    "palolem": "Palolem Beach Goa",
+    "dudhsagar": "Dudhsagar Waterfall Goa",
+    "aguada": "Fort Aguada Goa",
+    "chapora": "Chapora Fort Goa",
+
+    # ======================
+    # Uttarakhand
+    # ======================
+
+    "nainital": "Naini Lake Nainital",
+    "naini lake": "Naini Lake Uttarakhand",
+    "auli": "Auli Uttarakhand",
+    "valley of flowers": "Valley of Flowers Uttarakhand",
+    "kedarnath": "Kedarnath Temple",
+    "badrinath": "Badrinath Temple",
+    "rishikesh": "Lakshman Jhula Rishikesh",
+    "haridwar": "Har Ki Pauri Haridwar",
+
+    # ======================
+    # Himachal
+    # ======================
+
+    "shimla": "Shimla Ridge",
+    "manali": "Manali Himachal Pradesh",
+    "spiti": "Spiti Valley",
+    "kasol": "Kasol Himachal Pradesh",
+    "triund": "Triund Trek Dharamshala",
+
+    # ======================
+    # Ladakh
+    # ======================
+
+    "pangong": "Pangong Lake Ladakh",
+    "nubra": "Nubra Valley Ladakh",
+    "khardung": "Khardung La Pass",
+    "tsomoriri": "Tso Moriri Lake",
+
+    # ======================
+    # Kashmir
+    # ======================
+
+    "dal lake": "Dal Lake Srinagar",
+    "gulmarg": "Gulmarg Kashmir",
+    "sonamarg": "Sonamarg Kashmir",
+    "pahalgam": "Pahalgam Kashmir",
+
+    # ======================
+    # Sikkim
+    # ======================
+
+    "tsomgo": "Tsomgo Lake Sikkim",
+    "gurudongmar": "Gurudongmar Lake",
+    "yumthang": "Yumthang Valley",
+    "nathula": "Nathula Pass",
+
+    # ======================
+    # Tamil Nadu
+    # ======================
+
+    "meenakshi": "Meenakshi Temple Madurai",
+    "brihadeeswarar": "Brihadeeswarar Temple",
+    "ooty": "Ooty Botanical Garden",
+    "kodaikanal": "Kodaikanal Lake",
+    "mahabalipuram": "Shore Temple Mahabalipuram",
+
+    # ======================
+    # Karnataka
+    # ======================
+
+    "mysore palace": "Mysore Palace",
+    "hampi": "Hampi Karnataka",
+    "coorg": "Coorg Coffee Plantation",
+    "jog falls": "Jog Falls Karnataka",
+    "badami": "Badami Cave Temples",
+
+    # ======================
+    # Maharashtra
+    # ======================
+
+    "gateway of india": "Gateway of India Mumbai",
+    "ajanta": "Ajanta Caves",
+    "ellora": "Ellora Caves",
+    "marine drive": "Marine Drive Mumbai",
+    "raigad": "Raigad Fort",
+
+    # ======================
+    # Delhi
+    # ======================
+
+    "red fort": "Red Fort Delhi",
+    "qutub minar": "Qutub Minar Delhi",
+    "india gate": "India Gate Delhi",
+    "lotus temple": "Lotus Temple Delhi",
+    "humayun": "Humayun's Tomb",
+
+    # ======================
+    # Odisha
+    # ======================
+
+    "konark": "Konark Sun Temple",
+    "jagannath": "Jagannath Temple Puri",
+    "chilika": "Chilika Lake",
+    "dhauli": "Dhauli Shanti Stupa",
+
+    # ======================
+    # Gujarat
+    # ======================
+
+    "statue of unity": "Statue of Unity Gujarat",
+    "gir": "Gir National Park",
+    "rann of kutch": "White Rann Kutch",
+    "somnath": "Somnath Temple",
+
+    # ======================
+    # Assam
+    # ======================
+
+    "kaziranga": "Kaziranga National Park",
+    "kamakhya": "Kamakhya Temple Guwahati",
+    "majuli": "Majuli Island Assam",
+
+    # ======================
+    # Arunachal Pradesh
+    # ======================
+
+    "tawang": "Tawang Monastery",
+    "ziro": "Ziro Valley",
+    "sela": "Sela Pass",
+    }
+
     # Map raw attraction query using specialized search terms
     q_mapped = q_clean
+    # Use exact landmark mapping first
+    for landmark, landmark_query in LANDMARK_IMAGE_QUERY.items():
+        if landmark in q_lower:
+            q_mapped = landmark_query
+            cat_clean = "landmark"
+            break
+
+        # Normalize landmark names before dictionary lookup
+    LANDMARK_ALIASES = {
+        "hawa mahal": "Hawa Mahal Jaipur",
+        "city palace": "City Palace Rajasthan",
+        "jal mahal": "Jal Mahal Jaipur",
+        "nahargarh": "Nahargarh Fort Jaipur",
+        "amber fort": "Amber Fort Jaipur",
+        "amer fort": "Amber Fort Jaipur",
+        "mehrangarh": "Mehrangarh Fort Jodhpur",
+        "jaswant thada": "Jaswant Thada Jodhpur",
+        "umaid bhawan": "Umaid Bhawan Palace Jodhpur",
+        "lake pichola": "Lake Pichola Udaipur",
+        "jag mandir": "Jag Mandir Udaipur",
+        "pushkar lake": "Pushkar Lake Rajasthan",
+        "jantar mantar": "Jantar Mantar Jaipur",
+        "city palace udaipur": "City Palace Udaipur",
+        "city palace jaipur": "City Palace Jaipur",
+        "sam sand dunes": "Sam Sand Dunes Jaisalmer",
+        "jaisalmer fort": "Jaisalmer Fort Rajasthan",
+        "patwon": "Patwon Ki Haveli Jaisalmer",
+        "nathmal": "Nathmal Ki Haveli Jaisalmer",
+        "salim singh": "Salim Singh Ki Haveli Jaisalmer",
+        "chittorgarh": "Chittorgarh Fort Rajasthan",
+        "kumbhalgarh": "Kumbhalgarh Fort Rajasthan",
+        "dilwara": "Dilwara Temples Mount Abu",
+        "ranthambore": "Ranthambore National Park",
+    }
+    for alias, landmark in LANDMARK_ALIASES.items():
+        if alias in q_lower:
+            q_mapped = landmark
+            cat_clean = "landmark"
+            logger.info(f"LANDMARK ALIAS MATCH -> {alias} -> {landmark}")
+            break
+
     for key, val in ATTRACTION_QUERY_MAPPINGS.items():
         if key in q_lower:
             q_mapped = val
             break
+    logger.info(f"IMAGE ORIGINAL QUERY = {q_clean}")
+    logger.info(f"IMAGE CATEGORY = {cat_clean}")
+    logger.info(f"IMAGE MAPPED QUERY = {q_mapped}")
 
+
+    SEARCH_SUFFIX = {
+        "waterfall": "waterfall cascade nature",
+        "river": "river boating nature",
+        "lake": "lake boating scenic",
+        "cave": "limestone cave interior",
+        "bridge": "living root bridge forest",
+        "village": "traditional village rural",
+        "fort": "fort heritage architecture",
+        "palace": "palace royal architecture",
+        "temple": "temple architecture heritage",
+        "museum": "museum heritage",
+        "observatory": "observatory astronomy",
+        "market": "heritage market",
+        "national park": "wildlife national park",
+        "forest": "forest nature",
+        "desert": "desert dunes landscape",
+        "viewpoint": "viewpoint scenic landscape",
+        "canyon": "canyon valley landscape",
+        "trekking": "trek hiking trail",
+        "camping": "camping nature"
+        }
     # Define steps for Unsplash Search Strategy
-    steps = []
+
     
-    # STEP 1: Attraction Name + State
-    if target_state:
-        if target_state.lower() in q_mapped.lower():
-            steps.append((q_mapped, cat_clean))
-        else:
-            steps.append((f"{q_mapped} {target_state}", cat_clean))
-    else:
-        steps.append((q_mapped, cat_clean))
-        
-    # STEP 2: Attraction Name
-    if not (target_state and target_state.lower() in q_mapped.lower()):
-        steps.append((q_mapped, cat_clean))
-        
-    # STEP 3: Category Keywords + State
+   
+    
+    # ==========================================================
+    # SMART SEARCH STRATEGY v2
+    # ==========================================================
+
+    city_clean = (city or "").strip()
+    state_clean = (state or target_state or "").strip()
+
+    steps = []
+
+    # Highest confidence - exact attraction
+    steps.append((f"{q_mapped} {city_clean} {state_clean} India".strip(), cat_clean))
+
+    steps.append((f"{q_mapped} {state_clean} India".strip(), cat_clean))
+
+    steps.append((q_mapped.strip(), cat_clean))
+
+    # Attraction type in region
+    if cat_clean:
+        steps.append((f"{city_clean} {cat_clean}".strip(), cat_clean))
+        steps.append((f"{state_clean} {cat_clean}".strip(), cat_clean))
+
+    # Region searches
+    if city_clean:
+        steps.append((city_clean.strip(), cat_clean))
+
+    if state_clean:
+        steps.append((state_clean.strip(), cat_clean))
+
+    # Only now use category keywords
     cat_keywords = category_search_keywords.get(cat_clean, cat_clean)
-    if cat_keywords and target_state:
-        steps.append((f"{cat_keywords} {target_state}", cat_clean))
-        
-    # STEP 4: Category Keywords fallback only
-    if cat_keywords:
-        steps.append((cat_keywords, cat_clean))
-        
+
+    steps.append((f"{cat_keywords} {state_clean}".strip(), cat_clean))
+    steps.append((cat_keywords.strip(), cat_clean))
+
+    # Remove duplicates
+    seen = set()
+    filtered_steps = []
+
+    for q, c in steps:
+        q = " ".join(q.split())
+        if q.lower() not in seen:
+            seen.add(q.lower())
+            filtered_steps.append((q, c))
+
+    steps = filtered_steps
+
+    logger.info("=" * 80)
+    logger.info("SMART IMAGE SEARCH PIPELINE")
+
+    for i, (q, c) in enumerate(steps, 1):
+        logger.info(f"{i}. {q}")
+
+    logger.info("=" * 80)
     # 1. Try all steps on Unsplash first (Unsplash is the primary image source)
     for q_search, cat in steps:
         img_url = search_unsplash_only(q_search, cat)

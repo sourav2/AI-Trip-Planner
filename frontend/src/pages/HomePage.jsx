@@ -1,5 +1,6 @@
 import React from 'react';
 import { Compass, Sparkles, Map, Wallet } from 'lucide-react';
+import meghalayaImage from "../assets/images/meghalaya.jpg";
 
 export default function HomePage({ setCurrentPage }) {
   const features = [
@@ -27,7 +28,7 @@ export default function HomePage({ setCurrentPage }) {
     {
       title: "Meghalaya, India",
       tag: "Nature & Adventure",
-      image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=400&auto=format&fit=crop",
+      image: meghalayaImage,
       description: "Explore the living root bridges of Cherrapunji and crystal waters of Dawki.",
       comfort: "Moderate",
       days: 5

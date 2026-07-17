@@ -47,7 +47,15 @@ def geocode_location(query: str) -> tuple[float, float] | None:
         "manali": (32.2396, 77.1887),
         "shimla": (31.1048, 77.1734),
         "tamil nadu": (11.1271, 78.6569),
-        "meghalaya": (25.5379432, 91.2999102)
+        "meghalaya": (25.5379432, 91.2999102),
+        "jaisalmer": (26.9157, 70.9083),
+        "jodhpur": (26.2389, 73.0243),
+        "bikaner": (28.0229, 73.3119),
+        "ajmer": (26.4499, 74.6399),
+        "pushkar": (26.4894, 74.5511),
+        "mount abu": (24.5926, 72.7156),
+        "chittorgarh": (24.8887, 74.6269),
+        "ranthambore": (26.0173, 76.5026),
     }
 
     q_lower = q_clean.lower()
@@ -159,7 +167,8 @@ def _geocode_location_raw(query: str) -> tuple[float, float] | None:
         "kerala": (10.8505, 76.2711),
         "manali": (32.2396, 77.1887),
         "shimla": (31.1048, 77.1734),
-        "tamil nadu": (11.1271, 78.6569)
+        "tamil nadu": (11.1271, 78.6569),
+        "rajasthan": (26.9124, 75.7873),
     }
 
     q_lower = q_clean.lower()

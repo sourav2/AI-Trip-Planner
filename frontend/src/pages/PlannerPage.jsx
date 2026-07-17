@@ -237,6 +237,14 @@ export default function PlannerPage({
     return () => clearTimeout(timer);
   }, [itineraryLoading, isFinalizing]);
 
+  useEffect(() => {
+  console.log("START LOCATION", startLocation);
+  console.log("DESTINATION", destination);
+  console.log("START COORDS", startCoords);
+  console.log("DEST COORDS", destCoords);
+  console.log("SELECTED PLACES", selectedPlaces);
+}, [startLocation, destination, startCoords, destCoords, selectedPlaces]);
+
   const [routeInfo, setRouteInfo] = useState({ geometry: null, distance: 820, duration: 18 });
 
   const posterData = React.useMemo(() => {
@@ -737,7 +745,7 @@ export default function PlannerPage({
 
   // Debounce Autocomplete for Destination
   useEffect(() => {
-    if (!userTypingDest || !destination || destination.trim().length < 1) {
+    if (!userTypingDest || !destination || destination.trim().length < 3) {
       setDestSuggestions([]);
       setShowDestDropdown(false);
       return;
@@ -759,7 +767,7 @@ export default function PlannerPage({
       } catch (err) {
         console.error(err);
       }
-    }, 250);
+    }, 500);
     return () => clearTimeout(delayDebounce);
   }, [destination, userTypingDest]);
 
@@ -1755,7 +1763,7 @@ export default function PlannerPage({
                         <div className="flex items-center justify-between mb-4">
                           <div>
                             <h3 className="text-card-heading text-travel-text-primary uppercase tracking-wider">Route Overview</h3>
-                            <p className="text-small-custom text-[#6B7280] mt-0.5">Base Hub: Shillong</p>
+                            <p className="text-small-custom text-[#6B7280] mt-0.5">Base Hub: {destination}</p>
                           </div>
                           <select className="text-small-custom font-semibold bg-travel-bg-soft border border-travel-borders px-2 py-1 rounded-lg cursor-pointer">
                             <option>View: All Stops</option>
@@ -1763,6 +1771,7 @@ export default function PlannerPage({
                         </div>
 
                         <div className="h-[400px] w-full z-10 rounded-xl overflow-hidden border border-travel-borders">
+                          
                           {canRender3D ? (
                             <TravelMap3D
                               startCoords={startCoords}
